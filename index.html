@@ -12,21 +12,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Old Money New Markets palette */
-      --ivory:      #F2EDE3;   /* primary background — warm aged parchment */
-      --ivory-2:    #E9E2D7;   /* slightly deeper ivory for alternating sections */
-      --ivory-3:    #DDD5C8;   /* borders, rule lines on ivory */
-      --green:      #0B4D3B;   /* Mallard Green — primary dark accent */
-      --green-deep: #082e24;   /* hero background */
-      --gold:       #C2955A;   /* Old Gold */
-      --gold-dark:  #A67A3E;   /* borders, strong gold */
+      --ivory:      #F2EDE3;
+      --ivory-2:    #E9E2D7;
+      --ivory-3:    #DDD5C8;
+      --green:      #0B4D3B;
+      --green-deep: #082e24;
+      --gold:       #C2955A;
+      --gold-dark:  #A67A3E;
       --gold-light: #D4AA72;
-      --burgundy:   #7B112C;   /* Burgundy Wingtip — sparingly */
-      --blue:       #2C5F77;   /* Feather Blue — very sparingly */
-      --brown:      #4C242D;   /* Drake Brown — footer */
-      --text:       #1C0F0A;   /* near-black warm text */
-      --text-body:  #3D2B1F;   /* warm dark brown body */
-      --text-muted: #7A6455;   /* muted warm brown */
+      --burgundy:   #7B112C;
+      --blue:       #2C5F77;
+      --brown:      #4C242D;
+      --text:       #1C0F0A;
+      --text-body:  #3D2B1F;
+      --text-muted: #7A6455;
     }
 
     html { scroll-behavior: smooth; }
@@ -39,7 +38,7 @@
       overflow-x: hidden;
     }
 
-    /* ─── BOTANICAL TEXTURE (dark green on ivory — aged print feel) ─── */
+    /* ─── BOTANICAL TEXTURE ─── */
     .bot-texture {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M120 228 C96 180 70 132 80 86 C90 40 120 14 120 14 C120 14 150 40 160 86 C170 132 144 180 120 228Z' fill='rgba(11,77,59,0.05)' stroke='rgba(11,77,59,0.11)' stroke-width='0.8'/%3E%3Ccircle cx='120' cy='14' r='6' fill='rgba(11,77,59,0.16)'/%3E%3Cpath d='M80 86 C58 74 32 82 18 106' fill='none' stroke='rgba(11,77,59,0.09)' stroke-width='0.7'/%3E%3Cpath d='M80 86 C62 60 38 54 20 66' fill='rgba(11,77,59,0.035)' stroke='rgba(11,77,59,0.07)' stroke-width='0.7'/%3E%3Cpath d='M160 86 C182 74 208 82 222 106' fill='none' stroke='rgba(11,77,59,0.09)' stroke-width='0.7'/%3E%3Cpath d='M160 86 C178 60 202 54 220 66' fill='rgba(11,77,59,0.035)' stroke='rgba(11,77,59,0.07)' stroke-width='0.7'/%3E%3Ccircle cx='20' cy='86' r='3' fill='rgba(11,77,59,0.14)'/%3E%3Ccircle cx='220' cy='86' r='3' fill='rgba(11,77,59,0.14)'/%3E%3Ccircle cx='120' cy='120' r='2.5' fill='rgba(11,77,59,0.08)'/%3E%3C/svg%3E");
       background-repeat: repeat;
@@ -92,7 +91,7 @@
     }
     .nav-links a:hover { color: var(--gold); }
 
-    /* ─── HERO (dark green — dramatic entry) ─── */
+    /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
       display: grid;
@@ -108,7 +107,7 @@
         var(--green-deep);
     }
 
-    /* Botanical corner — hero top-right */
+    /* botanical corner — top right */
     .hero::after {
       content: '';
       position: absolute;
@@ -119,7 +118,7 @@
       pointer-events: none;
     }
 
-    /* Botanical — hero bottom-left (mirrored) */
+    /* botanical corner — bottom left */
     .hero::before {
       content: '';
       position: absolute;
@@ -267,15 +266,13 @@
     .marquee-track span::after { content: '✦'; margin-left: 2rem; opacity: 0.45; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ─── SHARED SECTION ─── */
+    /* ─── SHARED ─── */
     .section { padding: 7rem 6vw; }
     .section-inner { max-width: 1040px; margin: 0 auto; }
-
-    /* ivory section */
     .section--ivory  { background: var(--ivory); }
     .section--ivory2 { background: var(--ivory-2); }
 
-    /* ─── SECTION LABELS & HEADINGS ─── */
+    /* ─── LABELS & HEADINGS ─── */
     .sec-label {
       font-family: 'Inter', sans-serif;
       font-size: 0.64rem;
@@ -291,7 +288,6 @@
       width: 26px; height: 1px;
       background: var(--gold-dark); opacity: 0.55; flex-shrink: 0;
     }
-    /* tiny botanical leaf after label */
     .sec-label::after {
       content: '';
       display: inline-block;
@@ -311,10 +307,8 @@
     }
     .sec-heading .dot { color: var(--gold-dark); }
 
-    /* ─── PHOTO FRAME (ivory context) ─── */
-    .photo-frame {
-      position: relative; display: block;
-    }
+    /* ─── PHOTO FRAME ─── */
+    .photo-frame { position: relative; display: block; }
     .photo-frame::after {
       content: ''; position: absolute;
       bottom: -10px; right: -10px;
@@ -322,12 +316,9 @@
       border: 1px solid rgba(166,122,62,0.45);
       z-index: 0; pointer-events: none;
     }
-    .photo-frame img {
-      display: block; width: 100%;
-      position: relative; z-index: 1;
-    }
+    .photo-frame img { display: block; width: 100%; position: relative; z-index: 1; }
 
-    /* botanical corner ornament on photo frames */
+    /* botanical corner ornament on select frames */
     .photo-frame.bot-corner::before {
       content: '';
       position: absolute;
@@ -403,56 +394,7 @@
     }
     .botanical-divider svg { width: 100%; max-width: 880px; height: 72px; display: block; }
 
-    /* ─── GALLERY ─── */
-    .gallery-intro {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .gallery-note {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--text-muted);
-      max-width: 310px;
-      line-height: 1.75;
-      border-left: 1px solid var(--ivory-3);
-      padding-left: 1.2rem;
-    }
-
-    .gallery-layout {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 1.2rem;
-    }
-    .gallery-feature { overflow: hidden; }
-    .gallery-feature img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top center;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-    .gallery-feature:hover img { transform: scale(1.015); }
-
-    .gallery-secondary {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-    .gallery-cell { overflow: hidden; }
-    .gallery-cell img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover; object-position: top;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-    .gallery-cell:hover img { transform: scale(1.015); }
-
-    /* ─── SIMPLE RULE DIVIDER ─── */
+    /* ─── RULE DIVIDER ─── */
     .rule-divider {
       display: flex;
       align-items: center;
@@ -505,7 +447,7 @@
       width: 36px; height: 36px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath d='M18 34 C14 26 9 18 11 11 C13 4 18 1 18 1 C18 1 23 4 25 11 C27 18 22 26 18 34Z' fill='rgba(11,77,59,0.06)' stroke='rgba(11,77,59,0.1)' stroke-width='0.7'/%3E%3Ccircle cx='18' cy='1' r='2.5' fill='rgba(11,77,59,0.1)'/%3E%3C/svg%3E");
       background-size: contain; background-repeat: no-repeat;
-      opacity: 1; pointer-events: none;
+      pointer-events: none;
     }
 
     .expertise-num {
@@ -533,21 +475,19 @@
     }
 
     /* ─── CONNECT ─── */
-    .connect-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+    .connect-inner {
+      max-width: 640px;
       margin-top: 3rem;
     }
 
-    .connect-body > p {
+    .connect-intro {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: 1.18rem;
       font-weight: 300;
       color: var(--text-body);
-      line-height: 1.9;
-      margin-bottom: 2.2rem;
+      line-height: 1.95;
+      margin-bottom: 2.5rem;
+      font-style: italic;
     }
 
     .connect-links { display: flex; flex-direction: column; gap: 0.7rem; }
@@ -555,8 +495,8 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 0.92rem 1.3rem;
-      background: var(--ivory);
+      padding: 0.95rem 1.4rem;
+      background: transparent;
       border: 1px solid var(--ivory-3);
       color: var(--text-body);
       text-decoration: none;
@@ -564,28 +504,14 @@
       font-size: 0.84rem;
       font-weight: 300;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
+      max-width: 420px;
     }
     .connect-link:hover {
       border-color: var(--gold-dark);
       color: var(--green);
-      background: var(--ivory);
+      background: rgba(166,122,62,0.04);
     }
-    .connect-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; opacity: 0.6; }
-
-    .connect-photo-col { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-    .connect-frame { width: 100%; max-width: 340px; }
-    .connect-frame img {
-      width: 100%;
-      aspect-ratio: 2/3;
-      object-fit: cover; object-position: top center;
-    }
-    .connect-caption {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-    }
+    .connect-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; opacity: 0.55; }
 
     /* ─── FOOTER ─── */
     footer {
@@ -593,15 +519,6 @@
       border-top: 2px solid var(--gold-dark);
       padding: 3rem 6vw;
     }
-    .footer-inner {
-      max-width: 1040px; margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; gap: 1.5rem;
-    }
-
-    /* botanical footer ornament */
     .footer-bot {
       display: flex;
       justify-content: center;
@@ -609,6 +526,13 @@
     }
     .footer-bot svg { width: 120px; height: 32px; opacity: 0.4; }
 
+    .footer-inner {
+      max-width: 1040px; margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
     .footer-brand { display: flex; flex-direction: column; gap: 0.25rem; }
     .footer-name {
       font-family: 'Playfair Display', serif;
@@ -645,14 +569,10 @@
       .hero-photo-col { order: -1; }
       .hero-frame { width: 260px; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .gallery-layout { grid-template-columns: 1fr; }
       .expertise-grid { grid-template-columns: 1fr 1fr; }
-      .connect-grid { grid-template-columns: 1fr; }
-      .connect-photo-col { display: none; }
     }
     @media (max-width: 600px) {
       .expertise-grid { grid-template-columns: 1fr; }
-      .gallery-secondary { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .btn-secondary { display: none; }
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
@@ -670,13 +590,12 @@
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#connect">Connect</a></li>
     </ul>
   </nav>
 
-  <!-- HERO — dark green, dramatic -->
+  <!-- HERO — paige-643.jpg -->
   <section class="hero">
     <div class="hero-text">
       <p class="hero-eyebrow">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
@@ -714,7 +633,7 @@
     </div>
   </div>
 
-  <!-- ABOUT — ivory, botanical texture -->
+  <!-- ABOUT — paige-661.jpg in sidebar -->
   <section class="section section--ivory bot-texture" id="about">
     <div class="section-inner">
       <p class="sec-label">About</p>
@@ -777,7 +696,7 @@
     </div>
   </section>
 
-  <!-- BOTANICAL VINE DIVIDER — the signature moment -->
+  <!-- BOTANICAL VINE DIVIDER -->
   <div class="botanical-divider">
     <svg viewBox="0 0 880 72" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
       <circle cx="440" cy="36" r="10" fill="none" stroke="rgba(11,77,59,0.45)" stroke-width="1.3"/>
@@ -802,57 +721,15 @@
       <path d="M750 36 C755 50 770 55 762 41Z" fill="rgba(11,77,59,0.11)"/>
       <circle cx="176" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
       <circle cx="306" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
-      <circle cx="394" cy="36" r="2" fill="rgba(11,77,59,0.18)"/>
-      <circle cx="486" cy="36" r="2" fill="rgba(11,77,59,0.18)"/>
+      <circle cx="394" cy="36" r="2"   fill="rgba(11,77,59,0.18)"/>
+      <circle cx="486" cy="36" r="2"   fill="rgba(11,77,59,0.18)"/>
       <circle cx="574" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
       <circle cx="704" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
     </svg>
   </div>
 
-  <!-- GALLERY — ivory-2, botanical texture -->
-  <section class="section section--ivory2 bot-texture" id="gallery">
-    <div class="section-inner">
-      <div class="gallery-intro">
-        <div>
-          <p class="sec-label">Gallery</p>
-          <h2 class="sec-heading">Presence<span class="dot">.</span></h2>
-        </div>
-        <p class="gallery-note">
-          Photographed against lush botanical settings — commanding, verdant,
-          and unapologetic in the tradition of Kehinde Wiley.
-        </p>
-      </div>
-      <div class="gallery-layout">
-        <div class="photo-frame gallery-feature bot-corner">
-          <img src="images/paige-572.jpg" alt="Paige Monet Brown — botanical portrait" loading="lazy" />
-        </div>
-        <div class="gallery-secondary">
-          <div class="photo-frame gallery-cell">
-            <img src="images/paige-551.jpg" alt="Paige Monet Brown" loading="lazy" />
-          </div>
-          <div class="photo-frame gallery-cell">
-            <img src="images/paige-544.jpg" alt="Paige Monet Brown" loading="lazy" />
-          </div>
-          <div class="photo-frame gallery-cell">
-            <img src="images/paige-665.jpg" alt="Paige Monet Brown" loading="lazy" />
-          </div>
-          <div class="photo-frame gallery-cell">
-            <img src="images/paige-694.jpg" alt="Paige Monet Brown" loading="lazy" style="aspect-ratio:3/4;object-fit:cover;object-position:top center;" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RULE DIVIDER -->
-  <div class="rule-divider">
-    <div class="line"></div>
-    <span class="orn">✦</span>
-    <div class="line"></div>
-  </div>
-
-  <!-- EXPERTISE — ivory, botanical leaf watermarks on cards -->
-  <section class="section section--ivory" id="expertise">
+  <!-- EXPERTISE -->
+  <section class="section section--ivory2 bot-texture" id="expertise">
     <div class="section-inner">
       <p class="sec-label">What I Do</p>
       <h2 class="sec-heading">Expertise<span class="dot">.</span></h2>
@@ -898,37 +775,29 @@
     <div class="line"></div>
   </div>
 
-  <!-- CONNECT — ivory-2, botanical corner on photo -->
-  <section class="section section--ivory2 bot-texture" id="connect">
+  <!-- CONNECT -->
+  <section class="section section--ivory bot-texture" id="connect">
     <div class="section-inner">
       <p class="sec-label">Get in Touch</p>
       <h2 class="sec-heading">Let's<br />Connect<span class="dot">.</span></h2>
-      <div class="connect-grid">
-        <div class="connect-body">
-          <p>
-            Interested in working together? Whether you need regulatory guidance,
-            public affairs strategy, or coalition support — I'd love to hear from you.
-          </p>
-          <div class="connect-links">
-            <a href="mailto:paige@ja.partners" class="connect-link">
-              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8.236l8 5 8-5V18z"/></svg>
-              paige@ja.partners
-            </a>
-            <a href="https://ja.partners" target="_blank" rel="noopener" class="connect-link">
-              <svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1 17.938V18c0-.552-.448-1-1-1H8v-2a1 1 0 0 0-1-1H4.062A8.01 8.01 0 0 1 4 12c0-.342.023-.678.062-1.01L7 14v1a2 2 0 0 0 2 2v3.938zM17.5 17.385A7.977 7.977 0 0 1 14 19.938V18a2 2 0 0 0-2-2h-1v-3a1 1 0 0 0-1-1H7v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.411A7.984 7.984 0 0 1 20 12a7.956 7.956 0 0 1-2.5 5.385z"/></svg>
-              ja.partners
-            </a>
-            <a href="https://github.com/paige-cyber" target="_blank" rel="noopener" class="connect-link">
-              <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-              github.com/paige-cyber
-            </a>
-          </div>
-        </div>
-        <div class="connect-photo-col">
-          <div class="photo-frame connect-frame bot-corner">
-            <img src="images/paige-671.jpg" alt="Paige Monet Brown" loading="lazy" />
-          </div>
-          <p class="connect-caption">Paige Monet Brown</p>
+      <div class="connect-inner">
+        <p class="connect-intro">
+          Interested in working together? Whether you need regulatory guidance,
+          public affairs strategy, or coalition support — I'd love to hear from you.
+        </p>
+        <div class="connect-links">
+          <a href="mailto:paige@ja.partners" class="connect-link">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8.236l8 5 8-5V18z"/></svg>
+            paige@ja.partners
+          </a>
+          <a href="https://ja.partners" target="_blank" rel="noopener" class="connect-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1 17.938V18c0-.552-.448-1-1-1H8v-2a1 1 0 0 0-1-1H4.062A8.01 8.01 0 0 1 4 12c0-.342.023-.678.062-1.01L7 14v1a2 2 0 0 0 2 2v3.938zM17.5 17.385A7.977 7.977 0 0 1 14 19.938V18a2 2 0 0 0-2-2h-1v-3a1 1 0 0 0-1-1H7v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.411A7.984 7.984 0 0 1 20 12a7.956 7.956 0 0 1-2.5 5.385z"/></svg>
+            ja.partners
+          </a>
+          <a href="https://github.com/paige-cyber" target="_blank" rel="noopener" class="connect-link">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            github.com/paige-cyber
+          </a>
         </div>
       </div>
     </div>
