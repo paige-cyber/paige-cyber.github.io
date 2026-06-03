@@ -21,9 +21,7 @@
       --gold-dark:  #A67A3E;
       --gold-light: #D4AA72;
       --burgundy:   #7B112C;
-      --blue:       #2C5F77;
       --brown:      #4C242D;
-      --text:       #1C0F0A;
       --text-body:  #3D2B1F;
       --text-muted: #7A6455;
     }
@@ -58,227 +56,188 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(194,149,90,0.3);
     }
-
     .nav-brand { text-decoration: none; display: flex; flex-direction: column; gap: 0.1rem; }
     .nav-brand-name {
       font-family: 'Playfair Display', serif;
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-      line-height: 1;
+      font-size: 0.98rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.05em; line-height: 1;
     }
     .nav-brand-sub {
       font-family: 'Inter', sans-serif;
-      font-size: 0.56rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(242,237,227,0.4);
-      line-height: 1;
+      font-size: 0.56rem; font-weight: 400;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(242,237,227,0.4); line-height: 1;
     }
-
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-family: 'Inter', sans-serif;
-      font-size: 0.67rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      font-size: 0.67rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
       color: rgba(242,237,227,0.45);
-      text-decoration: none;
-      transition: color 0.2s;
+      text-decoration: none; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold); }
 
-    /* ─── HERO ─── */
+    /* ═══════════════════════════════
+       HERO — full-bleed editorial
+       (1619 Project style)
+    ═══════════════════════════════ */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 9rem 6vw 6rem;
-      gap: 5rem;
       position: relative;
+      height: 100vh;
+      min-height: 600px;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at 75% 12%, rgba(44,95,119,0.2) 0%, transparent 52%),
-        radial-gradient(ellipse at 5% 90%, rgba(194,149,90,0.09) 0%, transparent 46%),
-        var(--green-deep);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 8vw 5rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/paige-643.jpg');
+      background-size: cover;
+      background-position: top center;
+      transform-origin: center;
+    }
+
+    /* gradient — transparent top, deep green bottom */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(8,46,36,0.96) 0%,
+        rgba(8,46,36,0.72) 30%,
+        rgba(8,46,36,0.28) 60%,
+        rgba(8,46,36,0.06) 100%
+      );
     }
 
     /* botanical corner — top right */
-    .hero::after {
-      content: '';
+    .hero-botanical {
       position: absolute;
       top: 0; right: 0;
       width: 320px; height: 320px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cpath d='M320 0 C288 52 244 72 222 116 C200 160 212 206 176 238 C140 270 92 275 58 306 C36 324 18 312 0 320' fill='none' stroke='rgba(194,149,90,0.2)' stroke-width='1.1'/%3E%3Cpath d='M320 0 C272 32 234 70 202 108 C170 146 162 188 130 214 C98 240 56 242 24 272 C10 285 4 300 0 320' fill='none' stroke='rgba(194,149,90,0.11)' stroke-width='0.7'/%3E%3Cpath d='M222 116 C238 98 254 80 238 67' fill='none' stroke='rgba(194,149,90,0.26)' stroke-width='1'/%3E%3Cpath d='M222 116 C208 134 194 148 178 139' fill='rgba(194,149,90,0.08)' stroke='rgba(194,149,90,0.22)' stroke-width='0.9'/%3E%3Cpath d='M160 178 C176 160 192 148 178 134' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.16)' stroke-width='0.8'/%3E%3Cpath d='M160 178 C146 196 130 206 118 196' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.16)' stroke-width='0.8'/%3E%3Ccircle cx='222' cy='116' r='4' fill='rgba(194,149,90,0.32)'/%3E%3Ccircle cx='160' cy='178' r='3.2' fill='rgba(194,149,90,0.24)'/%3E%3Ccircle cx='98' cy='240' r='2.5' fill='rgba(194,149,90,0.18)'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cpath d='M320 0 C288 52 244 72 222 116 C200 160 212 206 176 238 C140 270 92 275 58 306 C36 324 18 312 0 320' fill='none' stroke='rgba(194,149,90,0.22)' stroke-width='1.1'/%3E%3Cpath d='M320 0 C272 32 234 70 202 108 C170 146 162 188 130 214 C98 240 56 242 24 272 C10 285 4 300 0 320' fill='none' stroke='rgba(194,149,90,0.12)' stroke-width='0.7'/%3E%3Cpath d='M222 116 C238 98 254 80 238 67' fill='none' stroke='rgba(194,149,90,0.28)' stroke-width='1'/%3E%3Cpath d='M222 116 C208 134 194 148 178 139' fill='rgba(194,149,90,0.09)' stroke='rgba(194,149,90,0.24)' stroke-width='0.9'/%3E%3Ccircle cx='222' cy='116' r='4' fill='rgba(194,149,90,0.34)'/%3E%3Ccircle cx='160' cy='178' r='3.2' fill='rgba(194,149,90,0.25)'/%3E%3C/svg%3E");
       background-size: cover;
       pointer-events: none;
+      z-index: 1;
     }
 
-    /* botanical corner — bottom left */
-    .hero::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 200px; height: 200px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M0 200 C20 170 50 150 64 118 C78 86 68 52 90 28 C102 14 116 8 130 0' fill='none' stroke='rgba(194,149,90,0.14)' stroke-width='0.9'/%3E%3Cpath d='M64 118 C50 106 32 108 20 124' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.18)' stroke-width='0.8'/%3E%3Cpath d='M64 118 C76 104 78 88 66 80' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.18)' stroke-width='0.8'/%3E%3Ccircle cx='64' cy='118' r='3' fill='rgba(194,149,90,0.26)'/%3E%3C/svg%3E");
-      background-size: cover;
-      pointer-events: none;
-    }
+    .hero-content { position: relative; z-index: 2; max-width: 900px; }
 
-    .hero-text { position: relative; z-index: 1; max-width: 540px; }
-
-    .hero-eyebrow {
+    .hero-kicker {
       font-family: 'Inter', sans-serif;
-      font-size: 0.64rem;
-      font-weight: 500;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.6rem;
+      font-size: 0.64rem; font-weight: 500;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.4rem;
       display: flex; align-items: center; gap: 0.8rem;
     }
-    .hero-eyebrow::before {
+    .hero-kicker::before {
       content: ''; display: inline-block;
       width: 30px; height: 1px;
-      background: var(--gold); opacity: 0.5; flex-shrink: 0;
+      background: var(--gold); opacity: 0.55; flex-shrink: 0;
     }
 
+    /* MASSIVE editorial name — the 1619 moment */
     .hero-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3.2rem, 5.5vw, 5.5rem);
+      font-size: clamp(4.5rem, 12vw, 11rem);
       font-weight: 900;
-      line-height: 0.97;
+      line-height: 0.86;
       color: var(--ivory);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.2em;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
     }
     .hero-name .gold { color: var(--gold); }
 
+    .hero-rule {
+      width: 60px; height: 1px;
+      background: var(--gold); opacity: 0.6;
+      margin-bottom: 1.2rem;
+    }
+
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1rem, 1.6vw, 1.35rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--gold-light);
-      margin-bottom: 1.8rem;
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      font-weight: 300; font-style: italic;
+      color: var(--gold-light); margin-bottom: 1.8rem;
     }
 
-    .hero-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.87rem;
-      font-weight: 300;
-      color: rgba(242,237,227,0.65);
-      line-height: 1.9;
-      margin-bottom: 2.6rem;
-      max-width: 430px;
-    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
     .btn-primary {
-      display: inline-block;
-      padding: 0.85rem 2.2rem;
-      background: var(--gold);
-      color: var(--green-deep);
+      display: inline-block; padding: 0.85rem 2.2rem;
+      background: var(--gold); color: var(--green-deep);
       font-family: 'Inter', sans-serif;
-      font-size: 0.67rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s;
+      font-size: 0.67rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.2s;
     }
     .btn-primary:hover { background: var(--gold-light); }
 
     .btn-secondary {
-      display: inline-block;
-      padding: 0.85rem 2.2rem;
+      display: inline-block; padding: 0.85rem 2.2rem;
       background: transparent;
       color: rgba(242,237,227,0.55);
       border: 1px solid rgba(242,237,227,0.2);
       font-family: 'Inter', sans-serif;
-      font-size: 0.67rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      text-decoration: none;
-      margin-left: 1rem;
-      transition: color 0.2s, border-color 0.2s;
+      font-size: 0.67rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      text-decoration: none; transition: color 0.2s, border-color 0.2s;
     }
     .btn-secondary:hover { color: var(--gold); border-color: rgba(194,149,90,0.5); }
 
-    .hero-photo-col {
-      position: relative; z-index: 1;
-      display: flex; justify-content: center;
-    }
-
-    .hero-frame { width: 390px; max-width: 100%; position: relative; }
-    .hero-frame::after {
-      content: ''; position: absolute;
-      bottom: -11px; right: -11px;
-      width: 100%; height: 100%;
-      border: 1px solid rgba(194,149,90,0.45);
-      z-index: 0; pointer-events: none;
-    }
-    .hero-frame img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      position: relative; z-index: 1;
-    }
-
-    .hero-badge {
+    /* scroll hint */
+    .hero-scroll {
       position: absolute;
-      top: 2rem; left: -1.6rem;
+      bottom: 2rem; right: 8vw;
       z-index: 2;
-      background: var(--burgundy);
-      color: var(--ivory);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
       font-family: 'Inter', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0.5rem 0.8rem;
-      line-height: 1.65;
+      font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(242,237,227,0.35);
+    }
+    .hero-scroll::after {
+      content: '';
+      display: block; width: 1px; height: 40px;
+      background: rgba(194,149,90,0.4);
     }
 
     /* ─── MARQUEE ─── */
     .marquee-wrap {
-      overflow: hidden;
-      padding: 1.15rem 0;
-      background: var(--gold);
-      white-space: nowrap;
+      overflow: hidden; padding: 1.15rem 0;
+      background: var(--gold); white-space: nowrap;
     }
     .marquee-track { display: inline-block; animation: marquee 38s linear infinite; }
     .marquee-track span {
       font-family: 'Playfair Display', serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--green-deep);
-      padding: 0 2rem;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--green-deep); padding: 0 2rem;
     }
     .marquee-track span::after { content: '✦'; margin-left: 2rem; opacity: 0.45; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ─── SHARED ─── */
-    .section { padding: 7rem 6vw; }
-    .section-inner { max-width: 1040px; margin: 0 auto; }
-    .section--ivory  { background: var(--ivory); }
-    .section--ivory2 { background: var(--ivory-2); }
+    /* ═══════════════════════════════
+       ABOUT — narrow editorial column
+       (1619 reading column style)
+    ═══════════════════════════════ */
+    .about-section {
+      background: var(--ivory);
+      padding: 7rem 6vw 5rem;
+    }
+    .about-section .section-inner {
+      max-width: 1040px; margin: 0 auto;
+    }
 
-    /* ─── LABELS & HEADINGS ─── */
     .sec-label {
       font-family: 'Inter', sans-serif;
-      font-size: 0.64rem;
-      font-weight: 500;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
+      font-size: 0.64rem; font-weight: 500;
+      letter-spacing: 0.26em; text-transform: uppercase;
       color: var(--gold-dark);
       display: flex; align-items: center; gap: 0.7rem;
       margin-bottom: 0.6rem;
@@ -290,8 +249,7 @@
     }
     .sec-label::after {
       content: '';
-      display: inline-block;
-      width: 14px; height: 14px;
+      display: inline-block; width: 14px; height: 14px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 13 C5 10 3 7 3.5 4 C4 1 7 0 7 0 C7 0 10 1 10.5 4 C11 7 9 10 7 13Z' fill='rgba(166,122,62,0.5)' stroke='rgba(166,122,62,0.7)' stroke-width='0.5'/%3E%3C/svg%3E");
       background-size: contain; background-repeat: no-repeat;
       opacity: 0.7; flex-shrink: 0;
@@ -300,94 +258,166 @@
     .sec-heading {
       font-family: 'Playfair Display', serif;
       font-size: clamp(3rem, 6.5vw, 5.8rem);
-      font-weight: 900;
-      color: var(--green);
-      line-height: 0.94;
-      letter-spacing: -0.01em;
+      font-weight: 900; color: var(--green);
+      line-height: 0.94; letter-spacing: -0.01em;
     }
     .sec-heading .dot { color: var(--gold-dark); }
 
-    /* ─── PHOTO FRAME ─── */
-    .photo-frame { position: relative; display: block; }
-    .photo-frame::after {
-      content: ''; position: absolute;
-      bottom: -10px; right: -10px;
-      width: 100%; height: 100%;
-      border: 1px solid rgba(166,122,62,0.45);
-      z-index: 0; pointer-events: none;
-    }
-    .photo-frame img { display: block; width: 100%; position: relative; z-index: 1; }
-
-    /* botanical corner ornament on select frames */
-    .photo-frame.bot-corner::before {
-      content: '';
-      position: absolute;
-      top: -8px; left: -8px;
-      width: 48px; height: 48px;
-      z-index: 2; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M0 0 C6 10 16 18 24 30 C18 20 10 12 0 0Z' fill='none' stroke='rgba(166,122,62,0.5)' stroke-width='0.9'/%3E%3Cpath d='M0 0 C10 8 20 10 28 20' fill='none' stroke='rgba(166,122,62,0.35)' stroke-width='0.7'/%3E%3Cpath d='M14 8 C10 4 6 2 10 6' fill='rgba(166,122,62,0.3)' stroke='rgba(166,122,62,0.5)' stroke-width='0.6'/%3E%3Ccircle cx='28' cy='20' r='2' fill='rgba(166,122,62,0.4)'/%3E%3C/svg%3E");
-      background-size: contain; background-repeat: no-repeat;
+    /* Narrow reading column */
+    .reading-col {
+      max-width: 720px;
+      margin: 3rem auto 0;
     }
 
-    /* ─── ABOUT ─── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 5rem;
-      align-items: start;
-      margin-top: 3rem;
+    /* Drop cap — first letter of the about body */
+    .reading-col p:first-child::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.5rem;
+      font-weight: 900;
+      color: var(--green);
+      float: left;
+      line-height: 0.72;
+      margin-right: 0.08em;
+      margin-top: 0.12em;
+      padding-bottom: 0.05em;
     }
 
-    .about-body p {
+    .reading-col p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.17rem;
+      font-size: 1.22rem;
       font-weight: 300;
       color: var(--text-body);
       line-height: 2;
+      margin-bottom: 1.5rem;
     }
-    .about-body p + p { margin-top: 1.4rem; }
-    .about-body strong { color: var(--green); font-weight: 600; }
+    .reading-col p:last-child { margin-bottom: 0; }
+    .reading-col strong { color: var(--green); font-weight: 600; }
 
-    .about-sidebar { display: flex; flex-direction: column; gap: 0.75rem; }
-
-    .about-portrait { width: 100%; margin-bottom: 0.2rem; }
-    .about-portrait img {
-      width: 100%;
-      aspect-ratio: 2/3;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    .info-card {
-      border-left: 2px solid var(--gold-dark);
-      padding: 0.8rem 0 0.8rem 1rem;
+    /* ─── FACT STRIP ─── */
+    .fact-strip {
+      background: var(--ivory-2);
+      border-top: 1px solid var(--gold-dark);
       border-bottom: 1px solid var(--ivory-3);
+      padding: 2.2rem 6vw;
     }
-    .info-label {
+    .fact-strip-inner {
+      max-width: 1040px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .fact { border-left: 2px solid var(--gold-dark); padding-left: 1rem; }
+    .fact-label {
       font-family: 'Inter', sans-serif;
-      font-size: 0.59rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-bottom: 0.25rem;
+      font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-dark); margin-bottom: 0.3rem;
     }
-    .info-value {
+    .fact-value {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.97rem;
-      color: var(--text-body);
-      font-weight: 300;
-      line-height: 1.55;
+      font-size: 0.97rem; font-weight: 300;
+      color: var(--text-body); line-height: 1.5;
     }
-    .info-value a { color: var(--green); text-decoration: none; }
-    .info-value a:hover { color: var(--gold-dark); }
+    .fact-value a { color: var(--green); text-decoration: none; }
+    .fact-value a:hover { color: var(--gold-dark); }
+
+    /* ═══════════════════════════════
+       FULL-WIDTH EDITORIAL PHOTO
+       (paige-661 — the 1619 moment)
+    ═══════════════════════════════ */
+    .editorial-photo {
+      width: 100%;
+      height: 80vh;
+      min-height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+    .editorial-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 18%;
+      display: block;
+    }
+    /* subtle botanical corner on photo */
+    .editorial-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(8,46,36,0.35), transparent);
+      pointer-events: none;
+    }
+
+    /* photo caption */
+    .photo-caption {
+      background: var(--green-deep);
+      padding: 0.9rem 8vw;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: rgba(242,237,227,0.4);
+      border-bottom: 1px solid rgba(194,149,90,0.2);
+    }
+
+    /* ═══════════════════════════════
+       PULL QUOTE
+       (dark green — high contrast,
+       very 1619 Project)
+    ═══════════════════════════════ */
+    .pull-quote-section {
+      background: var(--green);
+      padding: 7rem 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+    /* subtle botanical behind the quote */
+    .pull-quote-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M120 228 C96 180 70 132 80 86 C90 40 120 14 120 14 C120 14 150 40 160 86 C170 132 144 180 120 228Z' fill='rgba(242,237,227,0.04)' stroke='rgba(242,237,227,0.07)' stroke-width='0.8'/%3E%3Ccircle cx='120' cy='14' r='6' fill='rgba(242,237,227,0.08)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 240px 240px;
+      pointer-events: none;
+    }
+    .pull-quote-inner {
+      position: relative; z-index: 1;
+      max-width: 820px; margin: 0 auto;
+      text-align: center;
+    }
+    .pull-quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem; line-height: 0.5;
+      color: var(--gold); opacity: 0.55;
+      display: block; margin-bottom: 1.5rem;
+    }
+    .pull-quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 300; font-style: italic;
+      color: var(--ivory);
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+    }
+    .pull-quote-rule {
+      width: 48px; height: 1px;
+      background: var(--gold); opacity: 0.5;
+      margin: 2rem auto;
+    }
+    .pull-quote-attr {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-light); opacity: 0.75;
+    }
 
     /* ─── BOTANICAL VINE DIVIDER ─── */
     .botanical-divider {
       padding: 2.5rem 0;
       background: var(--ivory);
-      display: flex;
-      justify-content: center;
+      display: flex; justify-content: center;
       overflow: hidden;
       border-top: 1px solid var(--ivory-3);
       border-bottom: 1px solid var(--ivory-3);
@@ -396,27 +426,26 @@
 
     /* ─── RULE DIVIDER ─── */
     .rule-divider {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      padding: 2.4rem 6vw;
-      background: var(--ivory);
+      display: flex; align-items: center; gap: 1.2rem;
+      padding: 2.4rem 6vw; background: var(--ivory);
     }
     .rule-divider .line { flex: 1; height: 1px; background: var(--ivory-3); }
     .rule-divider .orn {
       font-family: 'Playfair Display', serif;
-      font-size: 0.85rem;
-      color: var(--gold-dark);
-      opacity: 0.65;
-      letter-spacing: 0.3em;
+      font-size: 0.85rem; color: var(--gold-dark);
+      opacity: 0.65; letter-spacing: 0.3em;
     }
+
+    /* ─── SHARED SECTIONS ─── */
+    .section { padding: 7rem 6vw; }
+    .section-inner { max-width: 1040px; margin: 0 auto; }
+    .section--ivory  { background: var(--ivory); }
+    .section--ivory2 { background: var(--ivory-2); }
 
     /* ─── EXPERTISE ─── */
     .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      margin-top: 3rem;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; margin-top: 3rem;
       border: 1px solid var(--ivory-3);
     }
     .expertise-card {
@@ -424,159 +453,108 @@
       padding: 2.2rem 2rem;
       border-right: 1px solid var(--ivory-3);
       border-bottom: 1px solid var(--ivory-3);
-      position: relative;
-      transition: background 0.25s;
+      position: relative; transition: background 0.25s;
     }
     .expertise-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 2px;
-      background: var(--gold);
-      opacity: 0;
-      transition: opacity 0.25s;
+      content: ''; position: absolute;
+      top: 0; left: 0; width: 100%; height: 2px;
+      background: var(--gold); opacity: 0; transition: opacity 0.25s;
     }
     .expertise-card:hover { background: var(--ivory-2); }
     .expertise-card:hover::before { opacity: 1; }
-
-    /* botanical leaf watermark on each card */
     .expertise-card::after {
-      content: '';
-      position: absolute;
+      content: ''; position: absolute;
       bottom: 1rem; right: 1rem;
       width: 36px; height: 36px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath d='M18 34 C14 26 9 18 11 11 C13 4 18 1 18 1 C18 1 23 4 25 11 C27 18 22 26 18 34Z' fill='rgba(11,77,59,0.06)' stroke='rgba(11,77,59,0.1)' stroke-width='0.7'/%3E%3Ccircle cx='18' cy='1' r='2.5' fill='rgba(11,77,59,0.1)'/%3E%3C/svg%3E");
-      background-size: contain; background-repeat: no-repeat;
-      pointer-events: none;
+      background-size: contain; background-repeat: no-repeat; pointer-events: none;
     }
-
     .expertise-num {
       font-family: 'Playfair Display', serif;
-      font-size: 0.75rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--gold-dark);
-      opacity: 0.75;
-      margin-bottom: 0.9rem;
+      font-size: 0.75rem; font-weight: 400; font-style: italic;
+      color: var(--gold-dark); opacity: 0.75; margin-bottom: 0.9rem;
     }
     .expertise-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--green);
-      margin-bottom: 0.65rem;
+      font-size: 1rem; font-weight: 600;
+      color: var(--green); margin-bottom: 0.65rem;
     }
     .expertise-card p {
       font-family: 'Inter', sans-serif;
-      font-size: 0.81rem;
-      color: var(--text-muted);
-      line-height: 1.78;
-      font-weight: 300;
+      font-size: 0.81rem; color: var(--text-muted);
+      line-height: 1.78; font-weight: 300;
     }
 
     /* ─── CONNECT ─── */
-    .connect-inner {
-      max-width: 640px;
-      margin-top: 3rem;
-    }
-
+    .connect-inner { max-width: 640px; margin-top: 3rem; }
     .connect-intro {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.18rem;
-      font-weight: 300;
-      color: var(--text-body);
-      line-height: 1.95;
-      margin-bottom: 2.5rem;
-      font-style: italic;
+      font-size: 1.18rem; font-weight: 300;
+      color: var(--text-body); line-height: 1.95;
+      margin-bottom: 2.5rem; font-style: italic;
     }
-
     .connect-links { display: flex; flex-direction: column; gap: 0.7rem; }
     .connect-link {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      display: flex; align-items: center; gap: 1rem;
       padding: 0.95rem 1.4rem;
-      background: transparent;
-      border: 1px solid var(--ivory-3);
-      color: var(--text-body);
-      text-decoration: none;
+      background: transparent; border: 1px solid var(--ivory-3);
+      color: var(--text-body); text-decoration: none;
       font-family: 'Inter', sans-serif;
-      font-size: 0.84rem;
-      font-weight: 300;
+      font-size: 0.84rem; font-weight: 300;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
       max-width: 420px;
     }
     .connect-link:hover {
-      border-color: var(--gold-dark);
-      color: var(--green);
+      border-color: var(--gold-dark); color: var(--green);
       background: rgba(166,122,62,0.04);
     }
     .connect-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; opacity: 0.55; }
 
     /* ─── FOOTER ─── */
-    footer {
-      background: var(--brown);
-      border-top: 2px solid var(--gold-dark);
-      padding: 3rem 6vw;
-    }
-    .footer-bot {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1.8rem;
-    }
+    footer { background: var(--brown); border-top: 2px solid var(--gold-dark); padding: 3rem 6vw; }
+    .footer-bot { display: flex; justify-content: center; margin-bottom: 1.8rem; }
     .footer-bot svg { width: 120px; height: 32px; opacity: 0.4; }
-
     .footer-inner {
       max-width: 1040px; margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; gap: 1.5rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1.5rem;
     }
     .footer-brand { display: flex; flex-direction: column; gap: 0.25rem; }
     .footer-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.04em;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.04em;
     }
     .footer-firm {
       font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      font-size: 0.6rem; font-weight: 400;
+      letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(242,237,227,0.3);
     }
-    .footer-right {
-      text-align: right;
-      display: flex; flex-direction: column; gap: 0.3rem;
-    }
+    .footer-right { text-align: right; display: flex; flex-direction: column; gap: 0.3rem; }
     .footer-right p, .footer-right a {
       font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      color: rgba(242,237,227,0.3);
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 0.7rem; color: rgba(242,237,227,0.3);
+      letter-spacing: 0.06em; text-decoration: none; transition: color 0.2s;
     }
     .footer-right a:hover { color: var(--gold); }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; padding-top: 8rem; gap: 3rem; }
-      .hero-photo-col { order: -1; }
-      .hero-frame { width: 260px; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    @media (max-width: 900px) {
+      .fact-strip-inner { grid-template-columns: 1fr 1fr; }
       .expertise-grid { grid-template-columns: 1fr 1fr; }
+      .hero-name { font-size: clamp(3.5rem, 14vw, 7rem); }
+      .editorial-photo { height: 55vh; }
     }
     @media (max-width: 600px) {
+      .fact-strip-inner { grid-template-columns: 1fr; gap: 1.2rem; }
       .expertise-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .btn-secondary { display: none; }
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
       .footer-right { text-align: center; }
+      .pull-quote-text { font-size: 1.5rem; }
+      .editorial-photo { height: 45vh; }
     }
   </style>
 </head>
@@ -595,28 +573,24 @@
     </ul>
   </nav>
 
-  <!-- HERO — paige-643.jpg -->
-  <section class="hero">
-    <div class="hero-text">
-      <p class="hero-eyebrow">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
+  <!-- HERO — full-bleed paige-643.jpg -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-botanical"></div>
+    <div class="hero-content">
+      <p class="hero-kicker">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
       <h1 class="hero-name">
         Paige<br />Monet<br />Brown<span class="gold">.</span>
       </h1>
+      <div class="hero-rule"></div>
       <p class="hero-title">Regulatory Strategist &amp; Public Affairs Advocate</p>
-      <p class="hero-sub">
-        Guiding clients through the complex terrain of licensing, policy, and stakeholder
-        relations across cannabis, hemp, alcohol, nightlife, and emerging adult-use
-        industries — with clarity, equity, and purpose.
-      </p>
-      <a href="#connect" class="btn-primary">Get in Touch</a>
-      <a href="#about" class="btn-secondary">Learn More</a>
-    </div>
-    <div class="hero-photo-col">
-      <div class="hero-frame">
-        <div class="hero-badge">Dallas,&nbsp;TX<br />J&amp;A&nbsp;LLC</div>
-        <img src="images/paige-643.jpg" alt="Paige Monet Brown" loading="eager" />
+      <div class="hero-ctas">
+        <a href="#connect" class="btn-primary">Get in Touch</a>
+        <a href="#about" class="btn-secondary">Learn More</a>
       </div>
     </div>
+    <span class="hero-scroll">Scroll</span>
   </section>
 
   <!-- MARQUEE -->
@@ -633,66 +607,80 @@
     </div>
   </div>
 
-  <!-- ABOUT — paige-661.jpg in sidebar -->
-  <section class="section section--ivory bot-texture" id="about">
+  <!-- ABOUT — narrow reading column + drop cap -->
+  <section class="about-section bot-texture" id="about">
     <div class="section-inner">
       <p class="sec-label">About</p>
       <h2 class="sec-heading">About<span class="dot">.</span></h2>
-      <div class="about-grid">
-        <div class="about-body">
-          <p>
-            Paige Monet Brown is the Principal and Founder of <strong>Jefferson &amp; Associates LLC</strong>,
-            a Dallas-based regulatory strategy and public affairs consultancy. With over a decade of experience
-            at the intersection of land use, political affairs, and community engagement, she guides clients
-            through the complex terrain of licensing, policy, and stakeholder relations across cannabis, hemp,
-            alcohol, nightlife, and emerging adult-use industries.
-          </p>
-          <p>
-            Before establishing Jefferson &amp; Associates, Paige led <strong>PMB Consulting</strong> in
-            Los Angeles, specializing in cannabis licensing and championing social equity frameworks —
-            ensuring that communities most impacted by prohibition had a meaningful seat at the table.
-            Her work is rooted in the conviction that effective policy is inseparable from justice.
-          </p>
-          <p>
-            A graduate of the University of Texas at Austin, Paige holds dual Bachelor's degrees in
-            <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> —
-            a foundation that informs her nuanced understanding of systemic structures, community dynamics,
-            and the human stories behind every policy decision. She is a skilled communicator,
-            coalition-builder, and advocate who believes deeply in the transformative power of empathy.
-          </p>
-          <p>
-            Beyond her practice, Paige is a singer, dancer, and performer with a lifelong love of theatre.
-            A passionate horror film enthusiast, close follower of political happenings, and someone who
-            relishes critical discourse on virtually any topic. A proud queer, Black, and Indigenous woman —
-            happily married for ten years, and devoted dog mom to a Yorkie named <strong>Jefferson</strong>.
-          </p>
-        </div>
-        <div class="about-sidebar">
-          <div class="photo-frame about-portrait bot-corner">
-            <img src="images/paige-661.jpg" alt="Paige Monet Brown" loading="lazy" />
-          </div>
-          <div class="info-card">
-            <div class="info-label">Firm</div>
-            <div class="info-value">Jefferson &amp; Associates LLC<br />Dallas, TX</div>
-          </div>
-          <div class="info-card">
-            <div class="info-label">Experience</div>
-            <div class="info-value">10+ years in regulatory strategy,<br />land use &amp; public affairs</div>
-          </div>
-          <div class="info-card">
-            <div class="info-label">Industries</div>
-            <div class="info-value">Cannabis · Hemp · Alcohol<br />Nightlife · Emerging Adult-Use</div>
-          </div>
-          <div class="info-card">
-            <div class="info-label">Education</div>
-            <div class="info-value">BA African &amp; African Diaspora Studies<br />BA Liberal Arts · UT Austin</div>
-          </div>
-          <div class="info-card">
-            <div class="info-label">Contact</div>
-            <div class="info-value"><a href="mailto:paige@ja.partners">paige@ja.partners</a></div>
-          </div>
-        </div>
+      <div class="reading-col">
+        <p>
+          Paige Monet Brown is the Principal and Founder of <strong>Jefferson &amp; Associates LLC</strong>,
+          a Dallas-based regulatory strategy and public affairs consultancy. With over a decade of experience
+          at the intersection of land use, political affairs, and community engagement, she guides clients
+          through the complex terrain of licensing, policy, and stakeholder relations across cannabis, hemp,
+          alcohol, nightlife, and emerging adult-use industries.
+        </p>
+        <p>
+          Before establishing Jefferson &amp; Associates, Paige led <strong>PMB Consulting</strong> in
+          Los Angeles, specializing in cannabis licensing and championing social equity frameworks —
+          ensuring that communities most impacted by prohibition had a meaningful seat at the table.
+          Her work is rooted in the conviction that effective policy is inseparable from justice.
+        </p>
+        <p>
+          A graduate of the University of Texas at Austin, Paige holds dual Bachelor's degrees in
+          <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> —
+          a foundation that informs her nuanced understanding of systemic structures, community dynamics,
+          and the human stories behind every policy decision. She is a skilled communicator,
+          coalition-builder, and advocate who believes deeply in the transformative power of empathy.
+        </p>
+        <p>
+          Beyond her practice, Paige is a singer, dancer, and performer with a lifelong love of theatre.
+          A passionate horror film enthusiast, close follower of political happenings, and someone who
+          relishes critical discourse on virtually any topic. A proud queer, Black, and Indigenous woman —
+          happily married for ten years, and devoted dog mom to a Yorkie named <strong>Jefferson</strong>.
+        </p>
       </div>
+    </div>
+  </section>
+
+  <!-- FACT STRIP -->
+  <div class="fact-strip">
+    <div class="fact-strip-inner">
+      <div class="fact">
+        <div class="fact-label">Firm</div>
+        <div class="fact-value">Jefferson &amp; Associates LLC · Dallas, TX</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Experience</div>
+        <div class="fact-value">10+ years — regulatory strategy &amp; public affairs</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Industries</div>
+        <div class="fact-value">Cannabis · Hemp · Alcohol · Nightlife · Adult-Use</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Education</div>
+        <div class="fact-value">BA African &amp; African Diaspora Studies<br />BA Liberal Arts · UT Austin</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL-WIDTH EDITORIAL PHOTO — paige-661.jpg -->
+  <div class="editorial-photo">
+    <img src="images/paige-661.jpg" alt="Paige Monet Brown" loading="lazy" />
+  </div>
+  <div class="photo-caption">Paige Monet Brown — Jefferson &amp; Associates LLC · Dallas, TX</div>
+
+  <!-- PULL QUOTE — Kehinde Wiley / 1619 moment -->
+  <section class="pull-quote-section">
+    <div class="pull-quote-inner">
+      <span class="pull-quote-mark">&ldquo;</span>
+      <p class="pull-quote-text">
+        Effective policy is inseparable from justice —
+        and every community deserves a meaningful seat at the table.
+      </p>
+      <div class="pull-quote-rule"></div>
+      <p class="pull-quote-attr">Paige Monet Brown &nbsp;·&nbsp; Jefferson &amp; Associates LLC</p>
     </div>
   </section>
 
