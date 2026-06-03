@@ -12,30 +12,36 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Old Money New Markets palette */
-      --green:       #0B4D3B;   /* Mallard Green */
-      --green-mid:   #0d5843;   /* slightly lighter */
-      --green-deep:  #082e24;   /* deeper for contrast */
-      --blue:        #2C5F77;   /* Feather Blue */
-      --burgundy:    #7B112C;   /* Burgundy Wingtip */
-      --gold:        #C2955A;   /* Old Gold */
+      --green:       #0B4D3B;
+      --green-mid:   #0d5843;
+      --green-deep:  #082e24;
+      --blue:        #2C5F77;
+      --burgundy:    #7B112C;
+      --gold:        #C2955A;
       --gold-light:  #D4AA72;
-      --gold-pale:   rgba(194,149,90,0.15);
-      --bone:        #ECE7DF;   /* Bone White */
+      --gold-pale:   rgba(194,149,90,0.12);
+      --bone:        #ECE7DF;
       --bone-dark:   #D9D0C4;
-      --brown:       #4C242D;   /* Drake Brown */
+      --brown:       #4C242D;
       --text-body:   #C8BFB0;
       --text-muted:  #7A9088;
-      --white:       #FAF7F2;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
       background-color: var(--green-deep);
       color: var(--bone);
       line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── BOTANICAL PATTERN (used as bg on sections) ─── */
+    .bot-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cpath d='M110 210 C88 165 65 120 74 78 C83 36 110 12 110 12 C110 12 137 36 146 78 C155 120 132 165 110 210Z' fill='rgba(194,149,90,0.055)' stroke='rgba(194,149,90,0.16)' stroke-width='0.8'/%3E%3Ccircle cx='110' cy='12' r='6' fill='rgba(194,149,90,0.22)'/%3E%3Cpath d='M74 78 C54 66 28 74 16 96' fill='none' stroke='rgba(194,149,90,0.13)' stroke-width='0.7'/%3E%3Cpath d='M74 78 C58 54 36 48 18 60' fill='rgba(194,149,90,0.045)' stroke='rgba(194,149,90,0.1)' stroke-width='0.7'/%3E%3Cpath d='M146 78 C166 66 192 74 204 96' fill='none' stroke='rgba(194,149,90,0.13)' stroke-width='0.7'/%3E%3Cpath d='M146 78 C162 54 184 48 202 60' fill='rgba(194,149,90,0.045)' stroke='rgba(194,149,90,0.1)' stroke-width='0.7'/%3E%3Ccircle cx='18' cy='78' r='3.5' fill='rgba(194,149,90,0.18)'/%3E%3Ccircle cx='202' cy='78' r='3.5' fill='rgba(194,149,90,0.18)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 220px 220px;
     }
 
     /* ─── NAV ─── */
@@ -48,7 +54,7 @@
       align-items: center;
       padding: 1.1rem 6vw;
       background: rgba(8,46,36,0.97);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(194,149,90,0.25);
     }
 
@@ -58,7 +64,7 @@
       font-weight: 600;
       color: var(--gold);
       text-decoration: none;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
@@ -66,38 +72,51 @@
 
     .nav-links a {
       font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--gold); }
 
     /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
       padding: 9rem 6vw 6rem;
       gap: 5rem;
+      position: relative;
+      overflow: hidden;
       background:
-        radial-gradient(ellipse at 80% 20%, rgba(44,95,119,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse at 10% 80%, rgba(194,149,90,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 15%, rgba(44,95,119,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(194,149,90,0.09) 0%, transparent 50%),
         var(--green-deep);
     }
 
-    .hero-text { max-width: 600px; }
+    /* Botanical corner ornaments on hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 340px; height: 340px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 340'%3E%3Cpath d='M340 0 C320 40 280 60 260 100 C240 140 250 180 220 210 C190 240 150 250 120 280 C90 310 80 330 0 340' fill='none' stroke='rgba(194,149,90,0.2)' stroke-width='1'/%3E%3Cpath d='M340 0 C300 20 270 50 240 80 C210 110 200 150 170 170 C140 190 100 190 80 220 C60 250 60 290 0 340' fill='none' stroke='rgba(194,149,90,0.12)' stroke-width='0.8'/%3E%3Cpath d='M280 60 C295 45 310 30 295 20' fill='none' stroke='rgba(194,149,90,0.25)' stroke-width='1'/%3E%3Cpath d='M280 60 C270 75 260 90 245 82' fill='rgba(194,149,90,0.1)' stroke='rgba(194,149,90,0.25)' stroke-width='0.8'/%3E%3Cpath d='M220 120 C235 105 250 92 238 80' fill='rgba(194,149,90,0.08)' stroke='rgba(194,149,90,0.2)' stroke-width='0.8'/%3E%3Cpath d='M220 120 C210 136 198 148 184 140' fill='rgba(194,149,90,0.08)' stroke='rgba(194,149,90,0.2)' stroke-width='0.8'/%3E%3Ccircle cx='280' cy='60' r='4' fill='rgba(194,149,90,0.3)'/%3E%3Ccircle cx='220' cy='120' r='3.5' fill='rgba(194,149,90,0.25)'/%3E%3Ccircle cx='160' cy='180' r='3' fill='rgba(194,149,90,0.2)'/%3E%3C/svg%3E");
+      background-size: cover;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .hero-text { max-width: 580px; position: relative; z-index: 1; }
 
     .hero-eyebrow {
       font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 500;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 1.4rem;
@@ -105,31 +124,29 @@
       align-items: center;
       gap: 0.8rem;
     }
-
     .hero-eyebrow::before {
       content: '';
       display: inline-block;
-      width: 32px;
-      height: 1px;
+      width: 30px; height: 1px;
       background: var(--gold);
       opacity: 0.6;
+      flex-shrink: 0;
     }
 
     .hero-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-size: clamp(3rem, 5.8vw, 5.6rem);
       font-weight: 900;
       line-height: 1.0;
       color: var(--bone);
-      margin-bottom: 0.15em;
+      margin-bottom: 0.12em;
       letter-spacing: -0.01em;
     }
-
     .hero-name .accent { color: var(--gold); }
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1.05rem, 1.8vw, 1.4rem);
       font-weight: 300;
       font-style: italic;
       color: var(--gold-light);
@@ -139,199 +156,165 @@
 
     .hero-sub {
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 300;
       color: var(--text-body);
-      line-height: 1.8;
+      line-height: 1.85;
       margin-bottom: 2.8rem;
-      max-width: 460px;
+      max-width: 450px;
     }
 
     .btn {
       display: inline-block;
-      padding: 0.9rem 2.4rem;
+      padding: 0.88rem 2.3rem;
       background: var(--gold);
       color: var(--green-deep);
       font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       text-decoration: none;
       border-radius: 1px;
       transition: background 0.2s;
     }
-
     .btn:hover { background: var(--gold-light); }
 
     .btn-ghost {
       background: transparent;
       color: var(--bone);
-      border: 1px solid rgba(236,231,223,0.3);
+      border: 1px solid rgba(236,231,223,0.28);
       margin-left: 1rem;
     }
-
-    .btn-ghost:hover { background: rgba(236,231,223,0.06); color: var(--gold); border-color: var(--gold); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); background: rgba(194,149,90,0.06); }
 
     /* hero photo */
     .hero-photo-col {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .hero-photo-frame {
-      position: relative;
-      width: 400px;
-      max-width: 100%;
-    }
-
-    .hero-photo-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -14px;
-      right: -14px;
-      width: 100%;
-      height: 100%;
-      border: 1.5px solid rgba(194,149,90,0.4);
-      border-radius: 2px;
-      z-index: 0;
-    }
-
-    .hero-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 2px;
-      display: block;
       position: relative;
       z-index: 1;
     }
 
+    .photo-frame {
+      position: relative;
+    }
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -12px; right: -12px;
+      width: 100%; height: 100%;
+      border: 1.5px solid rgba(194,149,90,0.45);
+      border-radius: 2px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .photo-frame img {
+      display: block;
+      position: relative;
+      z-index: 1;
+      border-radius: 2px;
+    }
+
+    .hero-photo-frame { width: 400px; max-width: 100%; }
+    .hero-photo-frame img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+    }
+
     .hero-badge {
       position: absolute;
-      top: 1.5rem;
-      left: -1.8rem;
+      top: 1.8rem; left: -1.8rem;
       z-index: 2;
       background: var(--burgundy);
       color: var(--bone);
       font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      padding: 0.6rem 0.9rem;
+      padding: 0.55rem 0.85rem;
       border-radius: 1px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* ─── MARQUEE ─── */
     .marquee-wrap {
       overflow: hidden;
-      padding: 1.4rem 0;
+      padding: 1.3rem 0;
       background: var(--gold);
       white-space: nowrap;
-      border-top: 1px solid rgba(8,46,36,0.2);
-      border-bottom: 1px solid rgba(8,46,36,0.2);
     }
-
     .marquee-track {
       display: inline-block;
-      animation: marquee 28s linear infinite;
+      animation: marquee 32s linear infinite;
     }
-
     .marquee-track span {
       font-family: 'Playfair Display', serif;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--green-deep);
       padding: 0 2rem;
     }
+    .marquee-track span::after { content: '✦'; margin-left: 2rem; color: var(--brown); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    .marquee-track span::after {
-      content: '✦';
-      margin-left: 2rem;
-      color: var(--brown);
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    /* ─── ORNAMENT DIVIDER ─── */
-    .ornament {
+    /* ─── BOTANICAL BAND DIVIDER ─── */
+    .botanical-band {
+      padding: 2.2rem 0;
+      background: var(--green-deep);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
-      padding: 3.5rem 6vw;
-      background: var(--green-deep);
+      overflow: hidden;
     }
+    .botanical-band svg { width: 100%; max-width: 900px; height: 80px; display: block; }
 
-    .ornament .line {
-      flex: 1;
-      max-width: 180px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(194,149,90,0.4), transparent);
-    }
-
-    .ornament-symbol {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--gold);
-      opacity: 0.7;
-      letter-spacing: 0.4em;
-    }
-
-    /* ─── SECTIONS ─── */
+    /* ─── SHARED SECTION ─── */
     .section { padding: 7rem 6vw; }
     .section--green  { background: var(--green); }
     .section--deep   { background: var(--green-deep); }
-    .section--blue   { background: var(--blue); }
+    .section-inner   { max-width: 1060px; margin: 0 auto; }
 
-    .section-inner { max-width: 1040px; margin: 0 auto; }
-
-    .section-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.2rem, 7vw, 6.5rem);
-      font-weight: 900;
-      color: var(--bone);
-      line-height: 0.95;
-      margin-bottom: 0.15em;
-    }
-
-    .section-heading .dot { color: var(--gold); }
-
-    .section-sub-label {
+    .section-eyebrow {
       font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
       display: flex;
       align-items: center;
       gap: 0.7rem;
     }
-
-    .section-sub-label::before {
+    .section-eyebrow::before {
       content: '';
       display: inline-block;
-      width: 24px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.5;
+      width: 22px; height: 1px;
+      background: var(--gold); opacity: 0.5;
+      flex-shrink: 0;
     }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6.5vw, 6rem);
+      font-weight: 900;
+      color: var(--bone);
+      line-height: 0.95;
+      margin-bottom: 0.12em;
+    }
+    .section-heading .dot { color: var(--gold); }
 
     /* ─── ABOUT ─── */
     .about-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 5rem;
       align-items: start;
       margin-top: 3.5rem;
@@ -344,46 +327,107 @@
       color: var(--text-body);
       line-height: 1.95;
     }
-
     .about-body p + p { margin-top: 1.5rem; }
+    .about-body strong { color: var(--gold-light); font-weight: 400; }
 
-    .about-body strong {
-      color: var(--gold-light);
-      font-weight: 400;
+    .about-photo-col { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .about-portrait { width: 100%; }
+    .about-portrait img {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      object-position: top center;
     }
 
-    .sidebar-stack { display: flex; flex-direction: column; gap: 1rem; }
-
-    .sidebar-card {
-      background: rgba(8,46,36,0.6);
-      border: 1px solid rgba(194,149,90,0.22);
-      border-left: 3px solid var(--gold);
-      padding: 1.4rem 1.6rem;
-      border-radius: 1px;
+    /* ─── GALLERY ─── */
+    .gallery-section {
+      padding: 7rem 6vw;
+      background: var(--green-deep);
     }
 
-    .sidebar-card-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.45rem;
+    .gallery-intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    .sidebar-card-value {
+    .gallery-note {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1rem;
-      color: var(--text-body);
-      font-weight: 300;
-      line-height: 1.6;
+      font-style: italic;
+      color: var(--text-muted);
+      max-width: 360px;
+      line-height: 1.7;
     }
 
-    .sidebar-card-value a {
-      color: var(--gold-light);
-      text-decoration: none;
+    /* Featured (Kehinde Wiley) + supporting grid */
+    .gallery-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
     }
+
+    .gallery-featured {
+      grid-row: span 2;
+    }
+    .gallery-featured img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .gallery-grid-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .gallery-thumb img {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-thumb:hover img { transform: scale(1.02); }
+
+    .gallery-thumb-wide img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-thumb-wide:hover img { transform: scale(1.02); }
+
+    .gallery-thumb, .gallery-thumb-wide, .gallery-featured {
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* photo frame overlay caption */
+    .gallery-thumb::after, .gallery-thumb-wide::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem 1rem 0.8rem;
+      background: linear-gradient(to top, rgba(8,46,36,0.85) 0%, transparent 100%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: rgba(236,231,223,0.7);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-thumb:hover::after, .gallery-thumb-wide:hover::after { opacity: 1; }
 
     /* ─── EXPERTISE ─── */
     .expertise-grid {
@@ -394,38 +438,27 @@
     }
 
     .expertise-card {
-      background: rgba(8,46,36,0.5);
+      background: rgba(8,46,36,0.55);
       border: 1px solid rgba(194,149,90,0.2);
       border-radius: 2px;
       padding: 2rem 1.8rem;
-      transition: border-color 0.25s, background 0.25s, transform 0.25s;
       position: relative;
       overflow: hidden;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
     }
-
     .expertise-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: 3px;
+      width: 100%; height: 2.5px;
       background: var(--gold);
       opacity: 0;
       transition: opacity 0.25s;
     }
-
-    .expertise-card:hover {
-      border-color: rgba(194,149,90,0.5);
-      background: rgba(8,46,36,0.8);
-      transform: translateY(-4px);
-    }
-
+    .expertise-card:hover { border-color: rgba(194,149,90,0.5); background: rgba(8,46,36,0.8); transform: translateY(-4px); }
     .expertise-card:hover::before { opacity: 1; }
 
-    .expertise-icon {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
+    .expertise-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
 
     .expertise-card h3 {
       font-family: 'Playfair Display', serif;
@@ -433,9 +466,7 @@
       font-weight: 700;
       color: var(--bone);
       margin-bottom: 0.6rem;
-      letter-spacing: 0.01em;
     }
-
     .expertise-card p {
       font-family: 'Inter', sans-serif;
       font-size: 0.84rem;
@@ -479,43 +510,53 @@
       font-weight: 400;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
-
-    .connect-link:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      background: rgba(194,149,90,0.07);
-    }
-
+    .connect-link:hover { border-color: var(--gold); color: var(--gold); background: rgba(194,149,90,0.07); }
     .connect-link svg { width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
 
-    .connect-photo-col { display: flex; justify-content: center; }
+    .connect-photo-col { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
 
-    .connect-photo-wrap {
-      position: relative;
-      width: 320px;
-      max-width: 100%;
-    }
-
-    .connect-photo {
+    .connect-portrait { width: 100%; max-width: 360px; }
+    .connect-portrait img {
       width: 100%;
-      aspect-ratio: 1;
+      aspect-ratio: 2/3;
       object-fit: cover;
       object-position: top center;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 0 12px rgba(194,149,90,0.08), 0 0 0 1px rgba(194,149,90,0.15) inset;
-      display: block;
     }
 
-    .connect-photo-caption {
-      text-align: center;
-      margin-top: 1.2rem;
+    .connect-caption {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--gold);
       opacity: 0.8;
+      text-align: center;
     }
+
+    /* ─── SIDEBAR CARDS ─── */
+    .sidebar-stack { display: flex; flex-direction: column; gap: 1rem; }
+    .sidebar-card {
+      background: rgba(8,46,36,0.6);
+      border: 1px solid rgba(194,149,90,0.2);
+      border-left: 3px solid var(--gold);
+      padding: 1.3rem 1.5rem;
+    }
+    .sidebar-card-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.63rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .sidebar-card-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--text-body);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .sidebar-card-value a { color: var(--gold-light); text-decoration: none; }
 
     /* ─── FOOTER ─── */
     footer {
@@ -528,38 +569,32 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-
     .footer-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 700;
       color: var(--gold);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
     }
-
-    footer p {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      color: rgba(236,231,223,0.5);
-      letter-spacing: 0.05em;
-    }
-
-    footer a { color: rgba(194,149,90,0.7); text-decoration: none; transition: color 0.2s; }
+    footer p { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(236,231,223,0.45); letter-spacing: 0.05em; }
+    footer a { color: rgba(194,149,90,0.65); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--gold); }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .hero { grid-template-columns: 1fr; gap: 3rem; padding-top: 8rem; }
       .hero-photo-col { order: -1; }
       .hero-photo-frame { width: 260px; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .gallery-layout { grid-template-columns: 1fr; }
+      .gallery-featured { grid-row: span 1; }
       .expertise-grid { grid-template-columns: 1fr 1fr; }
       .connect-layout { grid-template-columns: 1fr; }
       .connect-photo-col { display: none; }
     }
-
     @media (max-width: 600px) {
       .expertise-grid { grid-template-columns: 1fr; }
+      .gallery-grid-right { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .btn-ghost { display: none; }
       footer { justify-content: center; text-align: center; }
@@ -573,12 +608,13 @@
     <a href="#" class="nav-logo">J &amp; A</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#connect">Connect</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO — paige-643.jpg (favorite) -->
   <section class="hero">
     <div class="hero-text">
       <p class="hero-eyebrow">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
@@ -595,13 +631,9 @@
       <a href="#about" class="btn btn-ghost">Learn More</a>
     </div>
     <div class="hero-photo-col">
-      <div class="hero-photo-frame">
+      <div class="photo-frame hero-photo-frame">
         <div class="hero-badge">Dallas,&nbsp;TX<br />J&amp;A&nbsp;LLC</div>
-        <img
-          src="https://github.com/paige-cyber.png"
-          alt="Paige Monet Brown"
-          class="hero-photo"
-        />
+        <img src="images/paige-643.jpg" alt="Paige Monet Brown" loading="eager" />
       </div>
     </div>
   </section>
@@ -609,29 +641,19 @@
   <!-- MARQUEE -->
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
-      <span>Regulatory Strategy</span>
-      <span>Public Affairs</span>
-      <span>Cannabis &amp; Hemp</span>
-      <span>Community Equity</span>
-      <span>Land Use</span>
-      <span>Coalition Building</span>
-      <span>Social Equity Advocacy</span>
-      <span>Political Affairs</span>
-      <span>Regulatory Strategy</span>
-      <span>Public Affairs</span>
-      <span>Cannabis &amp; Hemp</span>
-      <span>Community Equity</span>
-      <span>Land Use</span>
-      <span>Coalition Building</span>
-      <span>Social Equity Advocacy</span>
-      <span>Political Affairs</span>
+      <span>Regulatory Strategy</span><span>Public Affairs</span><span>Cannabis &amp; Hemp</span>
+      <span>Community Equity</span><span>Land Use</span><span>Coalition Building</span>
+      <span>Social Equity Advocacy</span><span>Political Affairs</span>
+      <span>Regulatory Strategy</span><span>Public Affairs</span><span>Cannabis &amp; Hemp</span>
+      <span>Community Equity</span><span>Land Use</span><span>Coalition Building</span>
+      <span>Social Equity Advocacy</span><span>Political Affairs</span>
     </div>
   </div>
 
-  <!-- ABOUT -->
-  <section class="section section--green" id="about">
+  <!-- ABOUT — paige-661.jpg (B&W editorial) -->
+  <section class="section section--green bot-pattern" id="about">
     <div class="section-inner">
-      <p class="section-sub-label">About</p>
+      <p class="section-eyebrow">About</p>
       <h2 class="section-heading">About<span class="dot">.</span></h2>
       <div class="about-grid">
         <div class="about-body">
@@ -645,49 +667,44 @@
           <p>
             Before establishing Jefferson &amp; Associates, Paige led <strong>PMB Consulting</strong> in
             Los Angeles, where she specialized in cannabis licensing and championing social equity frameworks —
-            ensuring that communities most impacted by prohibition had a meaningful seat at the table as the
-            industry evolved. Her work has always been rooted in the belief that effective policy is
-            inseparable from justice.
+            ensuring that communities most impacted by prohibition had a meaningful seat at the table.
+            Her work has always been rooted in the belief that effective policy is inseparable from justice.
           </p>
           <p>
             A graduate of the University of Texas at Austin, Paige holds dual Bachelor's degrees in
-            <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> — an
-            academic foundation that informs her nuanced understanding of systemic structures, community
-            dynamics, and the human stories behind every policy decision.
+            <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> — a
+            foundation that informs her nuanced understanding of systemic structures, community dynamics,
+            and the human stories behind every policy decision. She is a skilled communicator,
+            coalition-builder, and public affairs strategist who believes deeply in the power of empathy
+            and communication to help individuals and organizations reach their full potential.
           </p>
           <p>
-            Beyond her practice, Paige is a singer, dancer, and performer with a lifelong love of theatre
-            and the stage. She is a passionate horror film enthusiast, an avid follower of current political
-            happenings, and someone who relishes deep, critical discussions on virtually any topic. She is a
-            proud queer, Black, and Indigenous woman — happily married for ten years and devoted dog mom to
-            a Yorkie named <strong>Jefferson</strong>.
+            Beyond her practice, Paige is a singer, dancer, and performer with a lifelong love of theatre.
+            A horror film enthusiast, avid follower of current political happenings, and someone who relishes
+            deep critical discussions on virtually any topic. A proud queer, Black, and Indigenous woman —
+            happily married for ten years, and devoted dog mom to a Yorkie named <strong>Jefferson</strong>.
           </p>
         </div>
-        <div class="sidebar-stack">
-          <div class="sidebar-card">
-            <div class="sidebar-card-label">Firm</div>
-            <div class="sidebar-card-value">Jefferson &amp; Associates LLC<br />Dallas, TX</div>
+        <div class="about-photo-col">
+          <div class="photo-frame about-portrait">
+            <img src="images/paige-661.jpg" alt="Paige Monet Brown — editorial portrait" loading="lazy" />
           </div>
-          <div class="sidebar-card">
-            <div class="sidebar-card-label">Experience</div>
-            <div class="sidebar-card-value">10+ years in regulatory strategy, land use &amp; public affairs</div>
-          </div>
-          <div class="sidebar-card">
-            <div class="sidebar-card-label">Industries</div>
-            <div class="sidebar-card-value">Cannabis · Hemp · Alcohol<br />Nightlife · Emerging Adult-Use</div>
-          </div>
-          <div class="sidebar-card">
-            <div class="sidebar-card-label">Education</div>
-            <div class="sidebar-card-value">
-              BA African &amp; African Diaspora Studies<br />
-              BA Liberal Arts<br />
-              University of Texas at Austin
+          <div class="sidebar-stack">
+            <div class="sidebar-card">
+              <div class="sidebar-card-label">Firm</div>
+              <div class="sidebar-card-value">Jefferson &amp; Associates LLC · Dallas, TX</div>
             </div>
-          </div>
-          <div class="sidebar-card">
-            <div class="sidebar-card-label">Contact</div>
-            <div class="sidebar-card-value">
-              <a href="mailto:paige@ja.partners">paige@ja.partners</a>
+            <div class="sidebar-card">
+              <div class="sidebar-card-label">Experience</div>
+              <div class="sidebar-card-value">10+ years — regulatory strategy, land use &amp; public affairs</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sidebar-card-label">Industries</div>
+              <div class="sidebar-card-value">Cannabis · Hemp · Alcohol · Nightlife · Adult-Use</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sidebar-card-label">Education</div>
+              <div class="sidebar-card-value">BA African &amp; African Diaspora Studies<br />BA Liberal Arts — UT Austin</div>
             </div>
           </div>
         </div>
@@ -695,17 +712,114 @@
     </div>
   </section>
 
-  <!-- ORNAMENT -->
-  <div class="ornament">
-    <div class="line"></div>
-    <span class="ornament-symbol">✦ &nbsp; ✦ &nbsp; ✦</span>
-    <div class="line"></div>
+  <!-- BOTANICAL DIVIDER -->
+  <div class="botanical-band">
+    <svg viewBox="0 0 900 80" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <!-- center bloom -->
+      <circle cx="450" cy="40" r="11" fill="none" stroke="rgba(194,149,90,0.55)" stroke-width="1.4"/>
+      <circle cx="450" cy="40" r="4.5" fill="rgba(194,149,90,0.4)"/>
+      <path d="M450 29 Q453 23 450 17 Q447 23 450 29Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M450 51 Q453 57 450 63 Q447 57 450 51Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M439 40 Q433 37 427 40 Q433 43 439 40Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M461 40 Q467 37 473 40 Q467 43 461 40Z" fill="rgba(194,149,90,0.35)"/>
+      <!-- left vine -->
+      <path d="M439 40 C400 40 355 25 310 40 C265 55 220 40 175 40 C130 40 85 30 0 40" stroke="rgba(194,149,90,0.3)" stroke-width="1" fill="none"/>
+      <!-- right vine -->
+      <path d="M461 40 C500 40 545 55 590 40 C635 25 680 40 725 40 C770 40 815 30 900 40" stroke="rgba(194,149,90,0.3)" stroke-width="1" fill="none"/>
+      <!-- left leaves -->
+      <path d="M310 40 C305 27 290 22 298 37Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M310 40 C305 53 290 58 298 43Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M220 40 C215 26 199 20 207 36Z" fill="rgba(194,149,90,0.2)"/>
+      <path d="M220 40 C215 54 199 60 207 44Z" fill="rgba(194,149,90,0.2)"/>
+      <path d="M130 40 C125 26 109 20 117 36Z" fill="rgba(194,149,90,0.15)"/>
+      <path d="M130 40 C125 54 109 60 117 44Z" fill="rgba(194,149,90,0.15)"/>
+      <!-- right leaves -->
+      <path d="M590 40 C595 27 610 22 602 37Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M590 40 C595 53 610 58 602 43Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M680 40 C685 26 701 20 693 36Z" fill="rgba(194,149,90,0.2)"/>
+      <path d="M680 40 C685 54 701 60 693 44Z" fill="rgba(194,149,90,0.2)"/>
+      <path d="M770 40 C775 26 791 20 783 36Z" fill="rgba(194,149,90,0.15)"/>
+      <path d="M770 40 C775 54 791 60 783 44Z" fill="rgba(194,149,90,0.15)"/>
+      <!-- small blooms -->
+      <circle cx="175" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+      <circle cx="310" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+      <circle cx="400" cy="40" r="2.5" fill="rgba(194,149,90,0.22)"/>
+      <circle cx="500" cy="40" r="2.5" fill="rgba(194,149,90,0.22)"/>
+      <circle cx="590" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+      <circle cx="725" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+    </svg>
+  </div>
+
+  <!-- GALLERY — Kehinde Wiley-inspired -->
+  <section class="gallery-section bot-pattern" id="gallery">
+    <div class="section-inner">
+      <div class="gallery-intro">
+        <div>
+          <p class="section-eyebrow">Gallery</p>
+          <h2 class="section-heading">Presence<span class="dot">.</span></h2>
+        </div>
+        <p class="gallery-note">
+          Photographed against lush botanical settings — an aesthetic rooted in the tradition
+          of Kehinde Wiley: commanding subjects, verdant backdrops, and unapologetic presence.
+        </p>
+      </div>
+
+      <!-- Featured: 572 (floral wallpaper — most Kehinde Wiley) + grid -->
+      <div class="gallery-layout">
+        <div class="photo-frame gallery-featured">
+          <img src="images/paige-572.jpg" alt="Paige Monet Brown — floral portrait" loading="lazy" />
+        </div>
+        <div class="gallery-grid-right">
+          <div class="gallery-thumb" data-label="Studio portrait">
+            <img src="images/paige-551.jpg" alt="Paige Monet Brown" loading="lazy" />
+          </div>
+          <div class="gallery-thumb" data-label="Power pose">
+            <img src="images/paige-544.jpg" alt="Paige Monet Brown" loading="lazy" />
+          </div>
+          <div class="gallery-thumb-wide" data-label="At ease">
+            <img src="images/paige-694.jpg" alt="Paige Monet Brown" loading="lazy" />
+          </div>
+          <div class="gallery-thumb" data-label="Portrait">
+            <img src="images/paige-562.jpg" alt="Paige Monet Brown" loading="lazy" />
+          </div>
+          <div class="gallery-thumb" data-label="Monochrome">
+            <img src="images/paige-665.jpg" alt="Paige Monet Brown" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTANICAL DIVIDER -->
+  <div class="botanical-band">
+    <svg viewBox="0 0 900 80" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="450" cy="40" r="11" fill="none" stroke="rgba(194,149,90,0.55)" stroke-width="1.4"/>
+      <circle cx="450" cy="40" r="4.5" fill="rgba(194,149,90,0.4)"/>
+      <path d="M450 29 Q453 23 450 17 Q447 23 450 29Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M450 51 Q453 57 450 63 Q447 57 450 51Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M439 40 Q433 37 427 40 Q433 43 439 40Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M461 40 Q467 37 473 40 Q467 43 461 40Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M439 40 C400 40 355 25 310 40 C265 55 220 40 175 40 C130 40 85 30 0 40" stroke="rgba(194,149,90,0.3)" stroke-width="1" fill="none"/>
+      <path d="M461 40 C500 40 545 55 590 40 C635 25 680 40 725 40 C770 40 815 30 900 40" stroke="rgba(194,149,90,0.3)" stroke-width="1" fill="none"/>
+      <path d="M310 40 C305 27 290 22 298 37Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M310 40 C305 53 290 58 298 43Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M220 40 C215 26 199 20 207 36Z" fill="rgba(194,149,90,0.2)"/>
+      <path d="M220 40 C215 54 199 60 207 44Z" fill="rgba(194,149,90,0.2)"/>
+      <path d="M590 40 C595 27 610 22 602 37Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M590 40 C595 53 610 58 602 43Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M680 40 C685 26 701 20 693 36Z" fill="rgba(194,149,90,0.2)"/>
+      <path d="M680 40 C685 54 701 60 693 44Z" fill="rgba(194,149,90,0.2)"/>
+      <circle cx="175" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+      <circle cx="310" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+      <circle cx="590" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+      <circle cx="725" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+    </svg>
   </div>
 
   <!-- EXPERTISE -->
-  <section class="section section--deep" id="expertise">
+  <section class="section section--green bot-pattern" id="expertise">
     <div class="section-inner">
-      <p class="section-sub-label">What I Do</p>
+      <p class="section-eyebrow">What I Do</p>
       <h2 class="section-heading">Expertise<span class="dot">.</span></h2>
       <div class="expertise-grid">
         <div class="expertise-card">
@@ -742,17 +856,30 @@
     </div>
   </section>
 
-  <!-- ORNAMENT -->
-  <div class="ornament">
-    <div class="line"></div>
-    <span class="ornament-symbol">✦ &nbsp; ✦ &nbsp; ✦</span>
-    <div class="line"></div>
+  <!-- BOTANICAL DIVIDER -->
+  <div class="botanical-band">
+    <svg viewBox="0 0 900 80" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="450" cy="40" r="11" fill="none" stroke="rgba(194,149,90,0.55)" stroke-width="1.4"/>
+      <circle cx="450" cy="40" r="4.5" fill="rgba(194,149,90,0.4)"/>
+      <path d="M450 29 Q453 23 450 17 Q447 23 450 29Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M450 51 Q453 57 450 63 Q447 57 450 51Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M439 40 Q433 37 427 40 Q433 43 439 40Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M461 40 Q467 37 473 40 Q467 43 461 40Z" fill="rgba(194,149,90,0.35)"/>
+      <path d="M439 40 C400 40 355 25 310 40 C265 55 220 40 175 40 C130 40 85 30 0 40" stroke="rgba(194,149,90,0.3)" stroke-width="1" fill="none"/>
+      <path d="M461 40 C500 40 545 55 590 40 C635 25 680 40 725 40 C770 40 815 30 900 40" stroke="rgba(194,149,90,0.3)" stroke-width="1" fill="none"/>
+      <path d="M310 40 C305 27 290 22 298 37Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M310 40 C305 53 290 58 298 43Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M590 40 C595 27 610 22 602 37Z" fill="rgba(194,149,90,0.25)"/>
+      <path d="M590 40 C595 53 610 58 602 43Z" fill="rgba(194,149,90,0.25)"/>
+      <circle cx="310" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+      <circle cx="590" cy="40" r="3" fill="rgba(194,149,90,0.28)"/>
+    </svg>
   </div>
 
-  <!-- CONNECT -->
-  <section class="section section--green" id="connect">
+  <!-- CONNECT — paige-671.jpg (elegant B&W seated) -->
+  <section class="section section--deep bot-pattern" id="connect">
     <div class="section-inner">
-      <p class="section-sub-label">Get in Touch</p>
+      <p class="section-eyebrow">Get in Touch</p>
       <h2 class="section-heading">Let's<br />Connect<span class="dot">.</span></h2>
       <div class="connect-layout">
         <div>
@@ -762,28 +889,24 @@
           </p>
           <div class="connect-links">
             <a href="mailto:paige@ja.partners" class="connect-link">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8.236l8 5 8-5V18z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8.236l8 5 8-5V18z"/></svg>
               paige@ja.partners
             </a>
             <a href="https://ja.partners" target="_blank" rel="noopener" class="connect-link">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1 17.938V18c0-.552-.448-1-1-1H8v-2a1 1 0 0 0-1-1H4.062A8.01 8.01 0 0 1 4 12c0-.342.023-.678.062-1.01L7 14v1a2 2 0 0 0 2 2v3.938zM17.5 17.385A7.977 7.977 0 0 1 14 19.938V18a2 2 0 0 0-2-2h-1v-3a1 1 0 0 0-1-1H7v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.411A7.984 7.984 0 0 1 20 12a7.956 7.956 0 0 1-2.5 5.385z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1 17.938V18c0-.552-.448-1-1-1H8v-2a1 1 0 0 0-1-1H4.062A8.01 8.01 0 0 1 4 12c0-.342.023-.678.062-1.01L7 14v1a2 2 0 0 0 2 2v3.938zM17.5 17.385A7.977 7.977 0 0 1 14 19.938V18a2 2 0 0 0-2-2h-1v-3a1 1 0 0 0-1-1H7v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.411A7.984 7.984 0 0 1 20 12a7.956 7.956 0 0 1-2.5 5.385z"/></svg>
               ja.partners
             </a>
             <a href="https://github.com/paige-cyber" target="_blank" rel="noopener" class="connect-link">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               github.com/paige-cyber
             </a>
           </div>
         </div>
         <div class="connect-photo-col">
-          <div class="connect-photo-wrap">
-            <img
-              src="https://github.com/paige-cyber.png"
-              alt="Paige Monet Brown"
-              class="connect-photo"
-            />
-            <p class="connect-photo-caption">Paige Monet Brown</p>
+          <div class="photo-frame connect-portrait">
+            <img src="images/paige-671.jpg" alt="Paige Monet Brown" loading="lazy" />
           </div>
+          <p class="connect-caption">Paige Monet Brown</p>
         </div>
       </div>
     </div>
