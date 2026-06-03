@@ -4,32 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paige Monet Brown</title>
-  <meta name="description" content="Paige Monet Brown — Principal & Founder of Jefferson & Associates LLC. Regulatory strategist, public affairs advocate, and coalition-builder in Dallas, TX." />
+  <meta name="description" content="Paige Monet Brown — Principal & Founder of Jefferson & Associates LLC. Regulatory strategist and public affairs advocate in Dallas, TX." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:       #0f1e2e;
-      --navy-mid:   #1a2f45;
-      --navy-light: #243b55;
-      --gold:       #c9a84c;
-      --gold-light: #e0be77;
-      --gold-pale:  rgba(201,168,76,0.12);
-      --cream:      #f5f0e8;
-      --text-light: #d4cfc6;
-      --text-muted: #8e9fb0;
-      --white:      #ffffff;
+      /* Old Money New Markets palette */
+      --green:       #0B4D3B;   /* Mallard Green */
+      --green-mid:   #0d5843;   /* slightly lighter */
+      --green-deep:  #082e24;   /* deeper for contrast */
+      --blue:        #2C5F77;   /* Feather Blue */
+      --burgundy:    #7B112C;   /* Burgundy Wingtip */
+      --gold:        #C2955A;   /* Old Gold */
+      --gold-light:  #D4AA72;
+      --gold-pale:   rgba(194,149,90,0.15);
+      --bone:        #ECE7DF;   /* Bone White */
+      --bone-dark:   #D9D0C4;
+      --brown:       #4C242D;   /* Drake Brown */
+      --text-body:   #C8BFB0;
+      --text-muted:  #7A9088;
+      --white:       #FAF7F2;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--navy);
-      color: var(--cream);
+      font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+      background-color: var(--green-deep);
+      color: var(--bone);
       line-height: 1.7;
     }
 
@@ -41,27 +46,29 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 6vw;
-      background: rgba(15,30,46,0.95);
+      padding: 1.1rem 6vw;
+      background: rgba(8,46,36,0.97);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(194,149,90,0.25);
     }
 
     .nav-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--gold);
       text-decoration: none;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
 
     .nav-links a {
-      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--text-muted);
       text-decoration: none;
@@ -74,72 +81,99 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      padding: 8rem 6vw 5rem;
-      gap: 4rem;
-      background: var(--navy);
+      padding: 9rem 6vw 6rem;
+      gap: 5rem;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(44,95,119,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(194,149,90,0.08) 0%, transparent 55%),
+        var(--green-deep);
     }
 
-    .hero-text { max-width: 580px; }
+    .hero-text { max-width: 600px; }
 
-    .hero-greeting {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
     }
 
-    .hero-headline {
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .hero-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+      font-size: clamp(3rem, 6vw, 5.5rem);
       font-weight: 900;
-      line-height: 1.05;
-      color: var(--white);
-      margin-bottom: 1.6rem;
+      line-height: 1.0;
+      color: var(--bone);
+      margin-bottom: 0.15em;
+      letter-spacing: -0.01em;
     }
 
-    .hero-headline em {
+    .hero-name .accent { color: var(--gold); }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 300;
       font-style: italic;
-      color: var(--gold);
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      letter-spacing: 0.02em;
     }
 
     .hero-sub {
-      font-size: 1.05rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
       font-weight: 300;
-      color: var(--text-light);
-      line-height: 1.75;
-      margin-bottom: 2.4rem;
-      max-width: 480px;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 2.8rem;
+      max-width: 460px;
     }
 
     .btn {
       display: inline-block;
-      padding: 0.85rem 2.2rem;
+      padding: 0.9rem 2.4rem;
       background: var(--gold);
-      color: var(--navy);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      color: var(--green-deep);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 2px;
-      transition: background 0.2s, color 0.2s;
+      border-radius: 1px;
+      transition: background 0.2s;
     }
 
     .btn:hover { background: var(--gold-light); }
 
-    .btn-outline {
+    .btn-ghost {
       background: transparent;
-      color: var(--gold);
-      border: 1.5px solid var(--gold);
+      color: var(--bone);
+      border: 1px solid rgba(236,231,223,0.3);
       margin-left: 1rem;
     }
 
-    .btn-outline:hover { background: var(--gold); color: var(--navy); }
+    .btn-ghost:hover { background: rgba(236,231,223,0.06); color: var(--gold); border-color: var(--gold); }
 
+    /* hero photo */
     .hero-photo-col {
       display: flex;
       justify-content: center;
@@ -148,16 +182,19 @@
 
     .hero-photo-frame {
       position: relative;
-      width: 420px;
+      width: 400px;
       max-width: 100%;
     }
 
-    .hero-photo-frame::before {
+    .hero-photo-frame::after {
       content: '';
       position: absolute;
-      inset: -12px;
-      border: 1.5px solid rgba(201,168,76,0.3);
-      border-radius: 4px;
+      bottom: -14px;
+      right: -14px;
+      width: 100%;
+      height: 100%;
+      border: 1.5px solid rgba(194,149,90,0.4);
+      border-radius: 2px;
       z-index: 0;
     }
 
@@ -166,125 +203,186 @@
       aspect-ratio: 3/4;
       object-fit: cover;
       object-position: top center;
-      border-radius: 3px;
+      border-radius: 2px;
       display: block;
       position: relative;
       z-index: 1;
-      filter: grayscale(20%);
     }
 
     .hero-badge {
       position: absolute;
-      bottom: -1.5rem;
-      right: -1.5rem;
+      top: 1.5rem;
+      left: -1.8rem;
       z-index: 2;
-      background: var(--gold);
-      color: var(--navy);
-      font-family: 'Playfair Display', serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      background: var(--burgundy);
+      color: var(--bone);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 0.7rem 1rem;
-      border-radius: 2px;
-      line-height: 1.4;
-      text-align: center;
-      max-width: 130px;
+      padding: 0.6rem 0.9rem;
+      border-radius: 1px;
+      line-height: 1.5;
     }
 
-    /* ─── STAR DIVIDER ─── */
-    .star-divider {
+    /* ─── MARQUEE ─── */
+    .marquee-wrap {
+      overflow: hidden;
+      padding: 1.4rem 0;
+      background: var(--gold);
+      white-space: nowrap;
+      border-top: 1px solid rgba(8,46,36,0.2);
+      border-bottom: 1px solid rgba(8,46,36,0.2);
+    }
+
+    .marquee-track {
+      display: inline-block;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      padding: 0 2rem;
+    }
+
+    .marquee-track span::after {
+      content: '✦';
+      margin-left: 2rem;
+      color: var(--brown);
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── ORNAMENT DIVIDER ─── */
+    .ornament {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1.2rem;
-      padding: 3rem 6vw;
-      background: var(--navy-mid);
+      gap: 1rem;
+      padding: 3.5rem 6vw;
+      background: var(--green-deep);
     }
 
-    .star-divider .line {
+    .ornament .line {
       flex: 1;
-      max-width: 200px;
+      max-width: 180px;
       height: 1px;
-      background: rgba(201,168,76,0.3);
+      background: linear-gradient(90deg, transparent, rgba(194,149,90,0.4), transparent);
     }
 
-    .star-svg {
-      width: 36px;
-      height: 36px;
-      fill: var(--gold);
-      opacity: 0.85;
+    .ornament-symbol {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      opacity: 0.7;
+      letter-spacing: 0.4em;
     }
 
-    /* ─── SECTIONS SHARED ─── */
-    .section {
-      padding: 7rem 6vw;
-    }
+    /* ─── SECTIONS ─── */
+    .section { padding: 7rem 6vw; }
+    .section--green  { background: var(--green); }
+    .section--deep   { background: var(--green-deep); }
+    .section--blue   { background: var(--blue); }
 
-    .section--alt { background: var(--navy-mid); }
-    .section--dark { background: var(--navy); }
-
-    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-inner { max-width: 1040px; margin: 0 auto; }
 
     .section-heading {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 7vw, 6rem);
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
       font-weight: 900;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 0.2em;
+      color: var(--bone);
+      line-height: 0.95;
+      margin-bottom: 0.15em;
     }
 
-    .section-heading-accent {
+    .section-heading .dot { color: var(--gold); }
+
+    .section-sub-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .section-sub-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
     }
 
     /* ─── ABOUT ─── */
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 5rem;
       align-items: start;
       margin-top: 3.5rem;
     }
 
     .about-body p {
-      font-size: 1.05rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
       font-weight: 300;
-      color: var(--text-light);
-      line-height: 1.9;
+      color: var(--text-body);
+      line-height: 1.95;
     }
 
-    .about-body p + p { margin-top: 1.4rem; }
+    .about-body p + p { margin-top: 1.5rem; }
 
-    .about-body strong { color: var(--gold-light); font-weight: 500; }
-
-    .about-sidebar {
-      padding-top: 0.5rem;
+    .about-body strong {
+      color: var(--gold-light);
+      font-weight: 400;
     }
+
+    .sidebar-stack { display: flex; flex-direction: column; gap: 1rem; }
 
     .sidebar-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 3px;
-      padding: 1.8rem;
-      margin-bottom: 1.2rem;
+      background: rgba(8,46,36,0.6);
+      border: 1px solid rgba(194,149,90,0.22);
+      border-left: 3px solid var(--gold);
+      padding: 1.4rem 1.6rem;
+      border-radius: 1px;
     }
 
     .sidebar-card-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
     .sidebar-card-value {
-      font-size: 0.95rem;
-      color: var(--text-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--text-body);
       font-weight: 300;
       line-height: 1.6;
+    }
+
+    .sidebar-card-value a {
+      color: var(--gold-light);
+      text-decoration: none;
     }
 
     /* ─── EXPERTISE ─── */
@@ -296,70 +394,54 @@
     }
 
     .expertise-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,168,76,0.18);
-      border-radius: 4px;
+      background: rgba(8,46,36,0.5);
+      border: 1px solid rgba(194,149,90,0.2);
+      border-radius: 2px;
       padding: 2rem 1.8rem;
       transition: border-color 0.25s, background 0.25s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .expertise-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.25s;
     }
 
     .expertise-card:hover {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.06);
-      transform: translateY(-3px);
+      border-color: rgba(194,149,90,0.5);
+      background: rgba(8,46,36,0.8);
+      transform: translateY(-4px);
     }
 
+    .expertise-card:hover::before { opacity: 1; }
+
     .expertise-icon {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       margin-bottom: 1rem;
       display: block;
     }
 
     .expertise-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--bone);
       margin-bottom: 0.6rem;
+      letter-spacing: 0.01em;
     }
 
     .expertise-card p {
-      font-size: 0.88rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.84rem;
       color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    /* ─── MARQUEE ─── */
-    .marquee-wrap {
-      overflow: hidden;
-      padding: 2.5rem 0;
-      background: var(--gold);
-      white-space: nowrap;
-    }
-
-    .marquee-track {
-      display: inline-block;
-      animation: marquee 20s linear infinite;
-    }
-
-    .marquee-track span {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--navy);
-      padding: 0 2.5rem;
-    }
-
-    .marquee-track span::after {
-      content: '✦';
-      margin-left: 2.5rem;
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      line-height: 1.7;
+      font-weight: 300;
     }
 
     /* ─── CONNECT ─── */
@@ -372,26 +454,28 @@
     }
 
     .connect-intro {
-      font-size: 1.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
       font-weight: 300;
-      color: var(--text-light);
-      line-height: 1.8;
+      color: var(--text-body);
+      line-height: 1.85;
       margin-bottom: 2.5rem;
     }
 
-    .connect-links { display: flex; flex-direction: column; gap: 1rem; }
+    .connect-links { display: flex; flex-direction: column; gap: 0.9rem; }
 
     .connect-link {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 1.1rem 1.4rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(201,168,76,0.22);
-      border-radius: 3px;
-      color: var(--text-light);
+      padding: 1rem 1.4rem;
+      background: rgba(8,46,36,0.5);
+      border: 1px solid rgba(194,149,90,0.2);
+      border-radius: 1px;
+      color: var(--text-body);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
       font-weight: 400;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
@@ -399,12 +483,18 @@
     .connect-link:hover {
       border-color: var(--gold);
       color: var(--gold);
-      background: rgba(201,168,76,0.07);
+      background: rgba(194,149,90,0.07);
     }
 
-    .connect-link svg { width: 20px; height: 20px; flex-shrink: 0; fill: currentColor; }
+    .connect-link svg { width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
 
-    .connect-photo-col { position: relative; }
+    .connect-photo-col { display: flex; justify-content: center; }
+
+    .connect-photo-wrap {
+      position: relative;
+      width: 320px;
+      max-width: 100%;
+    }
 
     .connect-photo {
       width: 100%;
@@ -412,18 +502,26 @@
       object-fit: cover;
       object-position: top center;
       border-radius: 50%;
-      border: 3px solid var(--gold);
-      box-shadow: 0 0 0 10px rgba(201,168,76,0.1);
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 0 12px rgba(194,149,90,0.08), 0 0 0 1px rgba(194,149,90,0.15) inset;
       display: block;
-      max-width: 340px;
-      margin: 0 auto;
+    }
+
+    .connect-photo-caption {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--gold);
+      opacity: 0.8;
     }
 
     /* ─── FOOTER ─── */
     footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(201,168,76,0.15);
-      padding: 2rem 6vw;
+      background: var(--brown);
+      border-top: 1px solid rgba(194,149,90,0.2);
+      padding: 2.5rem 6vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -431,26 +529,29 @@
       gap: 1rem;
     }
 
-    .footer-name {
+    .footer-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 700;
       color: var(--gold);
+      letter-spacing: 0.08em;
     }
 
     footer p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(236,231,223,0.5);
+      letter-spacing: 0.05em;
     }
 
-    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    footer a { color: rgba(194,149,90,0.7); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--gold); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 7rem; }
+      .hero { grid-template-columns: 1fr; gap: 3rem; padding-top: 8rem; }
       .hero-photo-col { order: -1; }
-      .hero-photo-frame { width: 280px; }
+      .hero-photo-frame { width: 260px; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .expertise-grid { grid-template-columns: 1fr 1fr; }
       .connect-layout { grid-template-columns: 1fr; }
@@ -460,7 +561,7 @@
     @media (max-width: 600px) {
       .expertise-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .btn-outline { display: none; }
+      .btn-ghost { display: none; }
       footer { justify-content: center; text-align: center; }
     }
   </style>
@@ -469,7 +570,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">PMB</a>
+    <a href="#" class="nav-logo">J &amp; A</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#expertise">Expertise</a></li>
@@ -480,24 +581,27 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <p class="hero-greeting">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
-      <h1 class="hero-headline">Hi! I'm<br /><em>Paige Monet<br />Brown.</em></h1>
+      <p class="hero-eyebrow">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
+      <h1 class="hero-name">
+        Paige<br />Monet<br />Brown<span class="accent">.</span>
+      </h1>
+      <p class="hero-title">Regulatory Strategist &amp; Public Affairs Advocate</p>
       <p class="hero-sub">
-        I'm a regulatory strategist and public affairs advocate specializing in
-        land use, cannabis &amp; emerging industries, and community equity — helping
-        clients navigate complex policy landscapes with clarity and purpose.
+        Guiding clients through the complex terrain of licensing, policy, and
+        stakeholder relations across cannabis, hemp, alcohol, nightlife, and
+        emerging adult-use industries — with clarity, equity, and purpose.
       </p>
       <a href="#connect" class="btn">Get in Touch</a>
-      <a href="#about" class="btn btn-outline">Learn More</a>
+      <a href="#about" class="btn btn-ghost">Learn More</a>
     </div>
     <div class="hero-photo-col">
       <div class="hero-photo-frame">
+        <div class="hero-badge">Dallas,&nbsp;TX<br />J&amp;A&nbsp;LLC</div>
         <img
           src="https://github.com/paige-cyber.png"
           alt="Paige Monet Brown"
           class="hero-photo"
         />
-        <div class="hero-badge">Dallas,<br />TX</div>
       </div>
     </div>
   </section>
@@ -512,6 +616,7 @@
       <span>Land Use</span>
       <span>Coalition Building</span>
       <span>Social Equity Advocacy</span>
+      <span>Political Affairs</span>
       <span>Regulatory Strategy</span>
       <span>Public Affairs</span>
       <span>Cannabis &amp; Hemp</span>
@@ -519,13 +624,15 @@
       <span>Land Use</span>
       <span>Coalition Building</span>
       <span>Social Equity Advocacy</span>
+      <span>Political Affairs</span>
     </div>
   </div>
 
   <!-- ABOUT -->
-  <section class="section section--alt" id="about">
+  <section class="section section--green" id="about">
     <div class="section-inner">
-      <h2 class="section-heading">About<span class="section-heading-accent">.</span></h2>
+      <p class="section-sub-label">About</p>
+      <h2 class="section-heading">About<span class="dot">.</span></h2>
       <div class="about-grid">
         <div class="about-body">
           <p>
@@ -538,24 +645,25 @@
           <p>
             Before establishing Jefferson &amp; Associates, Paige led <strong>PMB Consulting</strong> in
             Los Angeles, where she specialized in cannabis licensing and championing social equity frameworks —
-            ensuring that communities most impacted by prohibition had a meaningful seat at the table.
-            Her work has always been rooted in the belief that effective policy is inseparable from justice.
+            ensuring that communities most impacted by prohibition had a meaningful seat at the table as the
+            industry evolved. Her work has always been rooted in the belief that effective policy is
+            inseparable from justice.
           </p>
           <p>
             A graduate of the University of Texas at Austin, Paige holds dual Bachelor's degrees in
-            <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> — a
-            foundation that informs her nuanced understanding of systemic structures and the human stories
-            behind every policy decision.
+            <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> — an
+            academic foundation that informs her nuanced understanding of systemic structures, community
+            dynamics, and the human stories behind every policy decision.
           </p>
           <p>
-            Beyond her practice, Paige is a singer, dancer, and performer with a lifelong love of theatre.
-            She is a horror film enthusiast, a passionate follower of current political happenings, and
-            someone who relishes deep, critical discussions on virtually any topic. She is a proud queer,
-            Black, and Indigenous woman — happily married for ten years and devoted dog mom to a Yorkie
-            named <strong>Jefferson</strong>.
+            Beyond her practice, Paige is a singer, dancer, and performer with a lifelong love of theatre
+            and the stage. She is a passionate horror film enthusiast, an avid follower of current political
+            happenings, and someone who relishes deep, critical discussions on virtually any topic. She is a
+            proud queer, Black, and Indigenous woman — happily married for ten years and devoted dog mom to
+            a Yorkie named <strong>Jefferson</strong>.
           </p>
         </div>
-        <div class="about-sidebar">
+        <div class="sidebar-stack">
           <div class="sidebar-card">
             <div class="sidebar-card-label">Firm</div>
             <div class="sidebar-card-value">Jefferson &amp; Associates LLC<br />Dallas, TX</div>
@@ -566,40 +674,39 @@
           </div>
           <div class="sidebar-card">
             <div class="sidebar-card-label">Industries</div>
-            <div class="sidebar-card-value">Cannabis · Hemp · Alcohol · Nightlife · Emerging Adult-Use</div>
+            <div class="sidebar-card-value">Cannabis · Hemp · Alcohol<br />Nightlife · Emerging Adult-Use</div>
           </div>
           <div class="sidebar-card">
             <div class="sidebar-card-label">Education</div>
-            <div class="sidebar-card-value">BA African &amp; African Diaspora Studies<br />BA Liberal Arts<br />University of Texas at Austin</div>
+            <div class="sidebar-card-value">
+              BA African &amp; African Diaspora Studies<br />
+              BA Liberal Arts<br />
+              University of Texas at Austin
+            </div>
           </div>
           <div class="sidebar-card">
             <div class="sidebar-card-label">Contact</div>
-            <div class="sidebar-card-value"><a href="mailto:paige@ja.partners" style="color:var(--gold-light);text-decoration:none;">paige@ja.partners</a></div>
+            <div class="sidebar-card-value">
+              <a href="mailto:paige@ja.partners">paige@ja.partners</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STAR DIVIDER -->
-  <div class="star-divider">
+  <!-- ORNAMENT -->
+  <div class="ornament">
     <div class="line"></div>
-    <svg class="star-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-    </svg>
-    <svg class="star-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;opacity:0.5">
-      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-    </svg>
-    <svg class="star-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-    </svg>
+    <span class="ornament-symbol">✦ &nbsp; ✦ &nbsp; ✦</span>
     <div class="line"></div>
   </div>
 
   <!-- EXPERTISE -->
-  <section class="section section--dark" id="expertise">
+  <section class="section section--deep" id="expertise">
     <div class="section-inner">
-      <h2 class="section-heading">Expertise<span class="section-heading-accent">.</span></h2>
+      <p class="section-sub-label">What I Do</p>
+      <h2 class="section-heading">Expertise<span class="dot">.</span></h2>
       <div class="expertise-grid">
         <div class="expertise-card">
           <span class="expertise-icon">⚖️</span>
@@ -609,7 +716,7 @@
         <div class="expertise-card">
           <span class="expertise-icon">🏛️</span>
           <h3>Public Affairs &amp; Policy</h3>
-          <p>Building relationships with government stakeholders and crafting advocacy strategies that move legislation and shape discourse.</p>
+          <p>Building relationships with government stakeholders and crafting advocacy strategies that move legislation forward.</p>
         </div>
         <div class="expertise-card">
           <span class="expertise-icon">🤝</span>
@@ -619,12 +726,12 @@
         <div class="expertise-card">
           <span class="expertise-icon">🗣️</span>
           <h3>Communication &amp; Training</h3>
-          <p>Facilitating empathy-driven workshops and leadership development that unlock individual and organizational potential.</p>
+          <p>Facilitating empathy-driven workshops and leadership development to unlock individual and organizational potential.</p>
         </div>
         <div class="expertise-card">
           <span class="expertise-icon">🗺️</span>
           <h3>Land Use Strategy</h3>
-          <p>Advising on zoning, entitlements, and site selection for businesses in highly regulated environments.</p>
+          <p>Advising on zoning, entitlements, and site selection for businesses operating in highly regulated environments.</p>
         </div>
         <div class="expertise-card">
           <span class="expertise-icon">✊</span>
@@ -635,31 +742,23 @@
     </div>
   </section>
 
-  <!-- STAR DIVIDER -->
-  <div class="star-divider">
+  <!-- ORNAMENT -->
+  <div class="ornament">
     <div class="line"></div>
-    <svg class="star-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-    </svg>
-    <svg class="star-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;opacity:0.5">
-      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-    </svg>
-    <svg class="star-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-    </svg>
+    <span class="ornament-symbol">✦ &nbsp; ✦ &nbsp; ✦</span>
     <div class="line"></div>
   </div>
 
   <!-- CONNECT -->
-  <section class="section section--alt" id="connect">
+  <section class="section section--green" id="connect">
     <div class="section-inner">
-      <h2 class="section-heading">Get in<br />touch<span class="section-heading-accent">.</span></h2>
+      <p class="section-sub-label">Get in Touch</p>
+      <h2 class="section-heading">Let's<br />Connect<span class="dot">.</span></h2>
       <div class="connect-layout">
         <div>
           <p class="connect-intro">
-            Interested in working together or have a project in mind? I'd love to connect.
-            Whether you need regulatory guidance, public affairs strategy, or coalition support —
-            let's talk.
+            Interested in working together? Whether you need regulatory guidance,
+            public affairs strategy, or coalition support — I'd love to hear from you.
           </p>
           <div class="connect-links">
             <a href="mailto:paige@ja.partners" class="connect-link">
@@ -677,11 +776,14 @@
           </div>
         </div>
         <div class="connect-photo-col">
-          <img
-            src="https://github.com/paige-cyber.png"
-            alt="Paige Monet Brown"
-            class="connect-photo"
-          />
+          <div class="connect-photo-wrap">
+            <img
+              src="https://github.com/paige-cyber.png"
+              alt="Paige Monet Brown"
+              class="connect-photo"
+            />
+            <p class="connect-photo-caption">Paige Monet Brown</p>
+          </div>
         </div>
       </div>
     </div>
@@ -689,8 +791,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-name">Paige Monet Brown</span>
-    <p>&copy; 2026 Jefferson &amp; Associates LLC &middot; Dallas, TX</p>
+    <span class="footer-logo">Jefferson &amp; Associates LLC</span>
+    <p>&copy; 2026 Paige Monet Brown &nbsp;&middot;&nbsp; Dallas, TX</p>
     <p><a href="mailto:paige@ja.partners">paige@ja.partners</a></p>
   </footer>
 
