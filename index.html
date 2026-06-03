@@ -12,64 +12,38 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green:      #0B4D3B;   /* Mallard Green */
-      --green-deep: #082e24;   /* deeper bg */
-      --green-mid:  #0d5540;
-      --blue:       #2C5F77;   /* Feather Blue */
-      --burgundy:   #7B112C;   /* Burgundy Wingtip */
+      /* Old Money New Markets palette */
+      --ivory:      #F2EDE3;   /* primary background — warm aged parchment */
+      --ivory-2:    #E9E2D7;   /* slightly deeper ivory for alternating sections */
+      --ivory-3:    #DDD5C8;   /* borders, rule lines on ivory */
+      --green:      #0B4D3B;   /* Mallard Green — primary dark accent */
+      --green-deep: #082e24;   /* hero background */
       --gold:       #C2955A;   /* Old Gold */
+      --gold-dark:  #A67A3E;   /* borders, strong gold */
       --gold-light: #D4AA72;
-      --bone:       #ECE7DF;   /* Bone White */
-      --brown:      #4C242D;   /* Drake Brown */
-      --text-body:  #C4BAA8;
-      --text-muted: #6E8880;
+      --burgundy:   #7B112C;   /* Burgundy Wingtip — sparingly */
+      --blue:       #2C5F77;   /* Feather Blue — very sparingly */
+      --brown:      #4C242D;   /* Drake Brown — footer */
+      --text:       #1C0F0A;   /* near-black warm text */
+      --text-body:  #3D2B1F;   /* warm dark brown body */
+      --text-muted: #7A6455;   /* muted warm brown */
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Cormorant Garamond', serif;
-      background: var(--green-deep);
-      color: var(--bone);
+      background: var(--ivory);
+      color: var(--text-body);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* ─── TYPOGRAPHY HELPERS ─── */
-    .label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.67rem;
-      font-weight: 500;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.7rem;
-    }
-    .label::before {
-      content: '';
-      display: inline-block;
-      width: 28px; height: 1px;
-      background: var(--gold);
-      opacity: 0.55;
-      flex-shrink: 0;
-    }
-
-    .display {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      color: var(--bone);
-      line-height: 0.94;
-      letter-spacing: -0.01em;
-    }
-
-    .gold-rule {
-      width: 48px; height: 1px;
-      background: var(--gold);
-      opacity: 0.5;
-      margin: 2rem 0;
+    /* ─── BOTANICAL TEXTURE (dark green on ivory — aged print feel) ─── */
+    .bot-texture {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M120 228 C96 180 70 132 80 86 C90 40 120 14 120 14 C120 14 150 40 160 86 C170 132 144 180 120 228Z' fill='rgba(11,77,59,0.05)' stroke='rgba(11,77,59,0.11)' stroke-width='0.8'/%3E%3Ccircle cx='120' cy='14' r='6' fill='rgba(11,77,59,0.16)'/%3E%3Cpath d='M80 86 C58 74 32 82 18 106' fill='none' stroke='rgba(11,77,59,0.09)' stroke-width='0.7'/%3E%3Cpath d='M80 86 C62 60 38 54 20 66' fill='rgba(11,77,59,0.035)' stroke='rgba(11,77,59,0.07)' stroke-width='0.7'/%3E%3Cpath d='M160 86 C182 74 208 82 222 106' fill='none' stroke='rgba(11,77,59,0.09)' stroke-width='0.7'/%3E%3Cpath d='M160 86 C178 60 202 54 220 66' fill='rgba(11,77,59,0.035)' stroke='rgba(11,77,59,0.07)' stroke-width='0.7'/%3E%3Ccircle cx='20' cy='86' r='3' fill='rgba(11,77,59,0.14)'/%3E%3Ccircle cx='220' cy='86' r='3' fill='rgba(11,77,59,0.14)'/%3E%3Ccircle cx='120' cy='120' r='2.5' fill='rgba(11,77,59,0.08)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 240px 240px;
     }
 
     /* ─── NAV ─── */
@@ -80,50 +54,45 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.1rem 6vw;
-      background: rgba(8,46,36,0.97);
+      padding: 1rem 6vw;
+      background: rgba(8,46,36,0.98);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(194,149,90,0.22);
+      border-bottom: 1px solid rgba(194,149,90,0.3);
     }
 
-    .nav-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-      text-decoration: none;
-    }
+    .nav-brand { text-decoration: none; display: flex; flex-direction: column; gap: 0.1rem; }
     .nav-brand-name {
       font-family: 'Playfair Display', serif;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       font-weight: 700;
       color: var(--gold);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       line-height: 1;
     }
     .nav-brand-sub {
       font-family: 'Inter', sans-serif;
-      font-size: 0.58rem;
+      font-size: 0.56rem;
       font-weight: 400;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: rgba(242,237,227,0.4);
       line-height: 1;
     }
 
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: rgba(242,237,227,0.45);
       text-decoration: none;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold); }
 
-    /* ─── HERO ─── */
+    /* ─── HERO (dark green — dramatic entry) ─── */
     .hero {
       min-height: 100vh;
       display: grid;
@@ -134,49 +103,57 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(ellipse at 72% 12%, rgba(44,95,119,0.18) 0%, transparent 52%),
-        radial-gradient(ellipse at 8% 88%, rgba(194,149,90,0.08) 0%, transparent 48%),
+        radial-gradient(ellipse at 75% 12%, rgba(44,95,119,0.2) 0%, transparent 52%),
+        radial-gradient(ellipse at 5% 90%, rgba(194,149,90,0.09) 0%, transparent 46%),
         var(--green-deep);
     }
 
-    /* Subtle botanical corner — top right, very refined */
+    /* Botanical corner — hero top-right */
     .hero::after {
       content: '';
       position: absolute;
       top: 0; right: 0;
-      width: 300px; height: 300px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cpath d='M300 0 C270 50 230 70 210 110 C190 150 200 195 165 225 C130 255 85 260 50 290 C30 308 15 295 0 300' fill='none' stroke='rgba(194,149,90,0.18)' stroke-width='1'/%3E%3Cpath d='M300 0 C255 30 220 65 190 100 C160 135 155 175 125 200 C95 225 55 228 25 258 C12 270 5 285 0 300' fill='none' stroke='rgba(194,149,90,0.1)' stroke-width='0.7'/%3E%3Cpath d='M210 110 C225 94 238 78 224 66' fill='none' stroke='rgba(194,149,90,0.22)' stroke-width='0.9'/%3E%3Cpath d='M210 110 C198 126 186 140 172 132' fill='rgba(194,149,90,0.07)' stroke='rgba(194,149,90,0.2)' stroke-width='0.8'/%3E%3Ccircle cx='210' cy='110' r='3.5' fill='rgba(194,149,90,0.28)'/%3E%3Ccircle cx='150' cy='170' r='2.8' fill='rgba(194,149,90,0.2)'/%3E%3C/svg%3E");
+      width: 320px; height: 320px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cpath d='M320 0 C288 52 244 72 222 116 C200 160 212 206 176 238 C140 270 92 275 58 306 C36 324 18 312 0 320' fill='none' stroke='rgba(194,149,90,0.2)' stroke-width='1.1'/%3E%3Cpath d='M320 0 C272 32 234 70 202 108 C170 146 162 188 130 214 C98 240 56 242 24 272 C10 285 4 300 0 320' fill='none' stroke='rgba(194,149,90,0.11)' stroke-width='0.7'/%3E%3Cpath d='M222 116 C238 98 254 80 238 67' fill='none' stroke='rgba(194,149,90,0.26)' stroke-width='1'/%3E%3Cpath d='M222 116 C208 134 194 148 178 139' fill='rgba(194,149,90,0.08)' stroke='rgba(194,149,90,0.22)' stroke-width='0.9'/%3E%3Cpath d='M160 178 C176 160 192 148 178 134' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.16)' stroke-width='0.8'/%3E%3Cpath d='M160 178 C146 196 130 206 118 196' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.16)' stroke-width='0.8'/%3E%3Ccircle cx='222' cy='116' r='4' fill='rgba(194,149,90,0.32)'/%3E%3Ccircle cx='160' cy='178' r='3.2' fill='rgba(194,149,90,0.24)'/%3E%3Ccircle cx='98' cy='240' r='2.5' fill='rgba(194,149,90,0.18)'/%3E%3C/svg%3E");
+      background-size: cover;
+      pointer-events: none;
+    }
+
+    /* Botanical — hero bottom-left (mirrored) */
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 200px; height: 200px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M0 200 C20 170 50 150 64 118 C78 86 68 52 90 28 C102 14 116 8 130 0' fill='none' stroke='rgba(194,149,90,0.14)' stroke-width='0.9'/%3E%3Cpath d='M64 118 C50 106 32 108 20 124' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.18)' stroke-width='0.8'/%3E%3Cpath d='M64 118 C76 104 78 88 66 80' fill='rgba(194,149,90,0.06)' stroke='rgba(194,149,90,0.18)' stroke-width='0.8'/%3E%3Ccircle cx='64' cy='118' r='3' fill='rgba(194,149,90,0.26)'/%3E%3C/svg%3E");
       background-size: cover;
       pointer-events: none;
     }
 
     .hero-text { position: relative; z-index: 1; max-width: 540px; }
 
-    .hero-firm {
+    .hero-eyebrow {
       font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.64rem;
       font-weight: 500;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 1.6rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
+      display: flex; align-items: center; gap: 0.8rem;
     }
-    .hero-firm::before {
-      content: '';
-      display: inline-block;
-      width: 32px; height: 1px;
-      background: var(--gold); opacity: 0.55; flex-shrink: 0;
+    .hero-eyebrow::before {
+      content: ''; display: inline-block;
+      width: 30px; height: 1px;
+      background: var(--gold); opacity: 0.5; flex-shrink: 0;
     }
 
     .hero-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3.2rem, 5.5vw, 5.4rem);
+      font-size: clamp(3.2rem, 5.5vw, 5.5rem);
       font-weight: 900;
-      line-height: 0.98;
-      color: var(--bone);
+      line-height: 0.97;
+      color: var(--ivory);
       letter-spacing: -0.01em;
       margin-bottom: 0.2em;
     }
@@ -189,81 +166,80 @@
       font-style: italic;
       color: var(--gold-light);
       margin-bottom: 1.8rem;
-      letter-spacing: 0.02em;
     }
 
     .hero-sub {
       font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
+      font-size: 0.87rem;
       font-weight: 300;
-      color: var(--text-body);
+      color: rgba(242,237,227,0.65);
       line-height: 1.9;
       margin-bottom: 2.6rem;
       max-width: 430px;
     }
 
-    .btn {
+    .btn-primary {
       display: inline-block;
       padding: 0.85rem 2.2rem;
       background: var(--gold);
       color: var(--green-deep);
       font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn:hover { background: var(--gold-light); }
+    .btn-primary:hover { background: var(--gold-light); }
 
-    .btn-ghost {
+    .btn-secondary {
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
       background: transparent;
-      color: rgba(236,231,223,0.6);
-      border: 1px solid rgba(236,231,223,0.2);
+      color: rgba(242,237,227,0.55);
+      border: 1px solid rgba(242,237,227,0.2);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
       margin-left: 1rem;
+      transition: color 0.2s, border-color 0.2s;
     }
-    .btn-ghost:hover { color: var(--gold); border-color: rgba(194,149,90,0.5); background: rgba(194,149,90,0.05); }
+    .btn-secondary:hover { color: var(--gold); border-color: rgba(194,149,90,0.5); }
 
     .hero-photo-col {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
+      position: relative; z-index: 1;
+      display: flex; justify-content: center;
     }
 
-    /* ─── PHOTO FRAME (used throughout) ─── */
-    .photo-frame {
-      position: relative;
-      display: block;
-    }
-    .photo-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -10px; right: -10px;
+    .hero-frame { width: 390px; max-width: 100%; position: relative; }
+    .hero-frame::after {
+      content: ''; position: absolute;
+      bottom: -11px; right: -11px;
       width: 100%; height: 100%;
-      border: 1px solid rgba(194,149,90,0.38);
-      z-index: 0;
-      pointer-events: none;
+      border: 1px solid rgba(194,149,90,0.45);
+      z-index: 0; pointer-events: none;
     }
-    .photo-frame img {
-      display: block;
+    .hero-frame img {
       width: 100%;
-      position: relative;
-      z-index: 1;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      position: relative; z-index: 1;
     }
-
-    .hero-frame { width: 390px; max-width: 100%; }
-    .hero-frame img { aspect-ratio: 3/4; object-fit: cover; object-position: top center; }
 
     .hero-badge {
       position: absolute;
       top: 2rem; left: -1.6rem;
       z-index: 2;
       background: var(--burgundy);
-      color: var(--bone);
+      color: var(--ivory);
       font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -274,65 +250,93 @@
     /* ─── MARQUEE ─── */
     .marquee-wrap {
       overflow: hidden;
-      padding: 1.2rem 0;
+      padding: 1.15rem 0;
       background: var(--gold);
       white-space: nowrap;
-      border-top: 1px solid rgba(76,36,45,0.3);
-      border-bottom: 1px solid rgba(76,36,45,0.3);
     }
-    .marquee-track {
-      display: inline-block;
-      animation: marquee 36s linear infinite;
-    }
+    .marquee-track { display: inline-block; animation: marquee 38s linear infinite; }
     .marquee-track span {
       font-family: 'Playfair Display', serif;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--green-deep);
-      padding: 0 2.2rem;
+      padding: 0 2rem;
     }
-    .marquee-track span::after { content: '✦'; margin-left: 2.2rem; opacity: 0.5; }
+    .marquee-track span::after { content: '✦'; margin-left: 2rem; opacity: 0.45; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ─── SIMPLE GOLD RULE DIVIDER ─── */
-    .rule-divider {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      padding: 2.8rem 6vw;
-      background: var(--green-deep);
-      max-width: 100%;
-    }
-    .rule-divider .line {
-      flex: 1;
-      height: 1px;
-      background: rgba(194,149,90,0.25);
-    }
-    .rule-divider .diamond {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.9rem;
-      color: var(--gold);
-      opacity: 0.6;
-      letter-spacing: 0.3em;
-    }
-
-    /* ─── BOTANICAL DIVIDER — one refined instance ─── */
-    .botanical-divider {
-      padding: 2rem 0;
-      background: var(--green-deep);
-      display: flex;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .botanical-divider svg { width: 100%; max-width: 860px; height: 72px; display: block; }
-
-    /* ─── SECTIONS ─── */
+    /* ─── SHARED SECTION ─── */
     .section { padding: 7rem 6vw; }
-    .section--green { background: var(--green); }
-    .section--deep  { background: var(--green-deep); }
-    .section-inner  { max-width: 1040px; margin: 0 auto; }
+    .section-inner { max-width: 1040px; margin: 0 auto; }
+
+    /* ivory section */
+    .section--ivory  { background: var(--ivory); }
+    .section--ivory2 { background: var(--ivory-2); }
+
+    /* ─── SECTION LABELS & HEADINGS ─── */
+    .sec-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.64rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      display: flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 0.6rem;
+    }
+    .sec-label::before {
+      content: ''; display: inline-block;
+      width: 26px; height: 1px;
+      background: var(--gold-dark); opacity: 0.55; flex-shrink: 0;
+    }
+    /* tiny botanical leaf after label */
+    .sec-label::after {
+      content: '';
+      display: inline-block;
+      width: 14px; height: 14px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 13 C5 10 3 7 3.5 4 C4 1 7 0 7 0 C7 0 10 1 10.5 4 C11 7 9 10 7 13Z' fill='rgba(166,122,62,0.5)' stroke='rgba(166,122,62,0.7)' stroke-width='0.5'/%3E%3C/svg%3E");
+      background-size: contain; background-repeat: no-repeat;
+      opacity: 0.7; flex-shrink: 0;
+    }
+
+    .sec-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6.5vw, 5.8rem);
+      font-weight: 900;
+      color: var(--green);
+      line-height: 0.94;
+      letter-spacing: -0.01em;
+    }
+    .sec-heading .dot { color: var(--gold-dark); }
+
+    /* ─── PHOTO FRAME (ivory context) ─── */
+    .photo-frame {
+      position: relative; display: block;
+    }
+    .photo-frame::after {
+      content: ''; position: absolute;
+      bottom: -10px; right: -10px;
+      width: 100%; height: 100%;
+      border: 1px solid rgba(166,122,62,0.45);
+      z-index: 0; pointer-events: none;
+    }
+    .photo-frame img {
+      display: block; width: 100%;
+      position: relative; z-index: 1;
+    }
+
+    /* botanical corner ornament on photo frames */
+    .photo-frame.bot-corner::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: -8px;
+      width: 48px; height: 48px;
+      z-index: 2; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M0 0 C6 10 16 18 24 30 C18 20 10 12 0 0Z' fill='none' stroke='rgba(166,122,62,0.5)' stroke-width='0.9'/%3E%3Cpath d='M0 0 C10 8 20 10 28 20' fill='none' stroke='rgba(166,122,62,0.35)' stroke-width='0.7'/%3E%3Cpath d='M14 8 C10 4 6 2 10 6' fill='rgba(166,122,62,0.3)' stroke='rgba(166,122,62,0.5)' stroke-width='0.6'/%3E%3Ccircle cx='28' cy='20' r='2' fill='rgba(166,122,62,0.4)'/%3E%3C/svg%3E");
+      background-size: contain; background-repeat: no-repeat;
+    }
 
     /* ─── ABOUT ─── */
     .about-grid {
@@ -345,17 +349,17 @@
 
     .about-body p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.16rem;
+      font-size: 1.17rem;
       font-weight: 300;
       color: var(--text-body);
       line-height: 2;
     }
     .about-body p + p { margin-top: 1.4rem; }
-    .about-body strong { color: var(--gold-light); font-weight: 400; }
+    .about-body strong { color: var(--green); font-weight: 600; }
 
-    .about-sidebar { display: flex; flex-direction: column; gap: 0; }
+    .about-sidebar { display: flex; flex-direction: column; gap: 0.75rem; }
 
-    .about-portrait { width: 100%; margin-bottom: 1.5rem; }
+    .about-portrait { width: 100%; margin-bottom: 0.2rem; }
     .about-portrait img {
       width: 100%;
       aspect-ratio: 2/3;
@@ -364,20 +368,18 @@
     }
 
     .info-card {
-      border-top: 1px solid rgba(194,149,90,0.18);
-      padding: 1rem 0 1rem 1rem;
-      border-left: 2px solid var(--gold);
-      margin-bottom: 0.8rem;
-      background: rgba(8,46,36,0.4);
+      border-left: 2px solid var(--gold-dark);
+      padding: 0.8rem 0 0.8rem 1rem;
+      border-bottom: 1px solid var(--ivory-3);
     }
     .info-label {
       font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
+      font-size: 0.59rem;
       font-weight: 600;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
+      color: var(--gold-dark);
+      margin-bottom: 0.25rem;
     }
     .info-value {
       font-family: 'Cormorant Garamond', serif;
@@ -386,7 +388,20 @@
       font-weight: 300;
       line-height: 1.55;
     }
-    .info-value a { color: var(--gold-light); text-decoration: none; }
+    .info-value a { color: var(--green); text-decoration: none; }
+    .info-value a:hover { color: var(--gold-dark); }
+
+    /* ─── BOTANICAL VINE DIVIDER ─── */
+    .botanical-divider {
+      padding: 2.5rem 0;
+      background: var(--ivory);
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      border-top: 1px solid var(--ivory-3);
+      border-bottom: 1px solid var(--ivory-3);
+    }
+    .botanical-divider svg { width: 100%; max-width: 880px; height: 72px; display: block; }
 
     /* ─── GALLERY ─── */
     .gallery-intro {
@@ -402,92 +417,118 @@
       font-size: 1rem;
       font-style: italic;
       color: var(--text-muted);
-      max-width: 320px;
+      max-width: 310px;
       line-height: 1.75;
-      border-left: 1px solid rgba(194,149,90,0.3);
+      border-left: 1px solid var(--ivory-3);
       padding-left: 1.2rem;
     }
 
-    /* Feature + 3-across grid */
     .gallery-layout {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      grid-template-rows: auto;
       gap: 1.2rem;
     }
-    .gallery-feature {
-      grid-row: 1 / 3;
-      overflow: hidden;
-    }
+    .gallery-feature { overflow: hidden; }
     .gallery-feature img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
       display: block;
       transition: transform 0.5s ease;
     }
-    .gallery-feature:hover img { transform: scale(1.02); }
+    .gallery-feature:hover img { transform: scale(1.015); }
 
     .gallery-secondary {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.2rem;
     }
-
-    .gallery-cell { overflow: hidden; position: relative; }
+    .gallery-cell { overflow: hidden; }
     .gallery-cell img {
       width: 100%;
       aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top;
+      object-fit: cover; object-position: top;
       display: block;
       transition: transform 0.5s ease;
     }
-    .gallery-cell:hover img { transform: scale(1.02); }
+    .gallery-cell:hover img { transform: scale(1.015); }
+
+    /* ─── SIMPLE RULE DIVIDER ─── */
+    .rule-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 2.4rem 6vw;
+      background: var(--ivory);
+    }
+    .rule-divider .line { flex: 1; height: 1px; background: var(--ivory-3); }
+    .rule-divider .orn {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--gold-dark);
+      opacity: 0.65;
+      letter-spacing: 0.3em;
+    }
 
     /* ─── EXPERTISE ─── */
     .expertise-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
+      gap: 0;
       margin-top: 3rem;
-      border: 1px solid rgba(194,149,90,0.18);
+      border: 1px solid var(--ivory-3);
     }
-
     .expertise-card {
-      background: rgba(8,46,36,0.5);
+      background: var(--ivory);
       padding: 2.2rem 2rem;
-      border-right: 1px solid rgba(194,149,90,0.18);
-      border-bottom: 1px solid rgba(194,149,90,0.18);
-      transition: background 0.25s;
+      border-right: 1px solid var(--ivory-3);
+      border-bottom: 1px solid var(--ivory-3);
       position: relative;
+      transition: background 0.25s;
     }
-    .expertise-card:hover { background: rgba(8,46,36,0.85); }
+    .expertise-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .expertise-card:hover { background: var(--ivory-2); }
+    .expertise-card:hover::before { opacity: 1; }
+
+    /* botanical leaf watermark on each card */
+    .expertise-card::after {
+      content: '';
+      position: absolute;
+      bottom: 1rem; right: 1rem;
+      width: 36px; height: 36px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath d='M18 34 C14 26 9 18 11 11 C13 4 18 1 18 1 C18 1 23 4 25 11 C27 18 22 26 18 34Z' fill='rgba(11,77,59,0.06)' stroke='rgba(11,77,59,0.1)' stroke-width='0.7'/%3E%3Ccircle cx='18' cy='1' r='2.5' fill='rgba(11,77,59,0.1)'/%3E%3C/svg%3E");
+      background-size: contain; background-repeat: no-repeat;
+      opacity: 1; pointer-events: none;
+    }
 
     .expertise-num {
       font-family: 'Playfair Display', serif;
       font-size: 0.75rem;
       font-weight: 400;
       font-style: italic;
-      color: var(--gold);
-      opacity: 0.7;
-      margin-bottom: 1rem;
-      letter-spacing: 0.05em;
+      color: var(--gold-dark);
+      opacity: 0.75;
+      margin-bottom: 0.9rem;
     }
     .expertise-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 600;
-      color: var(--bone);
-      margin-bottom: 0.7rem;
-      letter-spacing: 0.01em;
+      color: var(--green);
+      margin-bottom: 0.65rem;
     }
     .expertise-card p {
       font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
+      font-size: 0.81rem;
       color: var(--text-muted);
-      line-height: 1.75;
+      line-height: 1.78;
       font-weight: 300;
     }
 
@@ -500,7 +541,7 @@
       margin-top: 3rem;
     }
 
-    .connect-body p {
+    .connect-body > p {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem;
       font-weight: 300;
@@ -509,85 +550,89 @@
       margin-bottom: 2.2rem;
     }
 
-    .connect-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .connect-links { display: flex; flex-direction: column; gap: 0.7rem; }
     .connect-link {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 0.95rem 1.3rem;
-      background: rgba(8,46,36,0.45);
-      border: 1px solid rgba(194,149,90,0.18);
+      padding: 0.92rem 1.3rem;
+      background: var(--ivory);
+      border: 1px solid var(--ivory-3);
       color: var(--text-body);
       text-decoration: none;
       font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 300;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
-    .connect-link:hover { border-color: rgba(194,149,90,0.55); color: var(--gold); background: rgba(194,149,90,0.06); }
-    .connect-link svg { width: 17px; height: 17px; fill: currentColor; flex-shrink: 0; opacity: 0.7; }
+    .connect-link:hover {
+      border-color: var(--gold-dark);
+      color: var(--green);
+      background: var(--ivory);
+    }
+    .connect-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; opacity: 0.6; }
 
     .connect-photo-col { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
     .connect-frame { width: 100%; max-width: 340px; }
     .connect-frame img {
       width: 100%;
       aspect-ratio: 2/3;
-      object-fit: cover;
-      object-position: top center;
+      object-fit: cover; object-position: top center;
     }
     .connect-caption {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 0.88rem;
-      color: rgba(194,149,90,0.65);
+      font-size: 0.86rem;
+      color: var(--text-muted);
       letter-spacing: 0.04em;
     }
 
     /* ─── FOOTER ─── */
     footer {
       background: var(--brown);
-      border-top: 1px solid rgba(194,149,90,0.18);
-      padding: 2.8rem 6vw;
+      border-top: 2px solid var(--gold-dark);
+      padding: 3rem 6vw;
     }
     .footer-inner {
-      max-width: 1040px;
-      margin: 0 auto;
+      max-width: 1040px; margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 1.2rem;
+      flex-wrap: wrap; gap: 1.5rem;
     }
-    .footer-brand {
+
+    /* botanical footer ornament */
+    .footer-bot {
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
+      justify-content: center;
+      margin-bottom: 1.8rem;
     }
+    .footer-bot svg { width: 120px; height: 32px; opacity: 0.4; }
+
+    .footer-brand { display: flex; flex-direction: column; gap: 0.25rem; }
     .footer-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--gold);
       letter-spacing: 0.04em;
     }
     .footer-firm {
       font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 400;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(236,231,223,0.35);
+      color: rgba(242,237,227,0.3);
     }
     .footer-right {
       text-align: right;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
+      display: flex; flex-direction: column; gap: 0.3rem;
     }
     .footer-right p, .footer-right a {
       font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      color: rgba(236,231,223,0.35);
+      font-size: 0.7rem;
+      color: rgba(242,237,227,0.3);
       letter-spacing: 0.06em;
       text-decoration: none;
       transition: color 0.2s;
@@ -601,7 +646,6 @@
       .hero-frame { width: 260px; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .gallery-layout { grid-template-columns: 1fr; }
-      .gallery-feature { grid-row: auto; }
       .expertise-grid { grid-template-columns: 1fr 1fr; }
       .connect-grid { grid-template-columns: 1fr; }
       .connect-photo-col { display: none; }
@@ -610,8 +654,8 @@
       .expertise-grid { grid-template-columns: 1fr; }
       .gallery-secondary { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .btn-ghost { display: none; }
-      .footer-inner { justify-content: center; text-align: center; }
+      .btn-secondary { display: none; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
       .footer-right { text-align: center; }
     }
   </style>
@@ -632,10 +676,10 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO — dark green, dramatic -->
   <section class="hero">
     <div class="hero-text">
-      <p class="hero-firm">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
+      <p class="hero-eyebrow">Principal &amp; Founder · Jefferson &amp; Associates LLC</p>
       <h1 class="hero-name">
         Paige<br />Monet<br />Brown<span class="gold">.</span>
       </h1>
@@ -645,11 +689,11 @@
         relations across cannabis, hemp, alcohol, nightlife, and emerging adult-use
         industries — with clarity, equity, and purpose.
       </p>
-      <a href="#connect" class="btn">Get in Touch</a>
-      <a href="#about" class="btn btn-ghost">Learn More</a>
+      <a href="#connect" class="btn-primary">Get in Touch</a>
+      <a href="#about" class="btn-secondary">Learn More</a>
     </div>
     <div class="hero-photo-col">
-      <div class="photo-frame hero-frame">
+      <div class="hero-frame">
         <div class="hero-badge">Dallas,&nbsp;TX<br />J&amp;A&nbsp;LLC</div>
         <img src="images/paige-643.jpg" alt="Paige Monet Brown" loading="eager" />
       </div>
@@ -670,11 +714,11 @@
     </div>
   </div>
 
-  <!-- ABOUT -->
-  <section class="section section--green" id="about">
+  <!-- ABOUT — ivory, botanical texture -->
+  <section class="section section--ivory bot-texture" id="about">
     <div class="section-inner">
-      <p class="label">About</p>
-      <h2 class="display" style="font-size:clamp(3rem,6.5vw,5.8rem)">About<span style="color:var(--gold)">.</span></h2>
+      <p class="sec-label">About</p>
+      <h2 class="sec-heading">About<span class="dot">.</span></h2>
       <div class="about-grid">
         <div class="about-body">
           <p>
@@ -693,20 +737,20 @@
           <p>
             A graduate of the University of Texas at Austin, Paige holds dual Bachelor's degrees in
             <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> —
-            a foundation that informs her understanding of systemic structures, community dynamics,
+            a foundation that informs her nuanced understanding of systemic structures, community dynamics,
             and the human stories behind every policy decision. She is a skilled communicator,
             coalition-builder, and advocate who believes deeply in the transformative power of empathy.
           </p>
           <p>
             Beyond her practice, Paige is a singer, dancer, and performer with a lifelong love of theatre.
-            A horror film enthusiast, a close follower of political happenings, and someone who relishes
-            critical discourse on virtually any topic. A proud queer, Black, and Indigenous woman —
+            A passionate horror film enthusiast, close follower of political happenings, and someone who
+            relishes critical discourse on virtually any topic. A proud queer, Black, and Indigenous woman —
             happily married for ten years, and devoted dog mom to a Yorkie named <strong>Jefferson</strong>.
           </p>
         </div>
         <div class="about-sidebar">
-          <div class="photo-frame about-portrait">
-            <img src="images/paige-661.jpg" alt="Paige Monet Brown — editorial portrait" loading="lazy" />
+          <div class="photo-frame about-portrait bot-corner">
+            <img src="images/paige-661.jpg" alt="Paige Monet Brown" loading="lazy" />
           </div>
           <div class="info-card">
             <div class="info-label">Firm</div>
@@ -714,7 +758,7 @@
           </div>
           <div class="info-card">
             <div class="info-label">Experience</div>
-            <div class="info-value">10+ years — regulatory strategy,<br />land use &amp; public affairs</div>
+            <div class="info-value">10+ years in regulatory strategy,<br />land use &amp; public affairs</div>
           </div>
           <div class="info-card">
             <div class="info-label">Industries</div>
@@ -733,61 +777,53 @@
     </div>
   </section>
 
-  <!-- ONE BOTANICAL DIVIDER — refined, understated -->
+  <!-- BOTANICAL VINE DIVIDER — the signature moment -->
   <div class="botanical-divider">
-    <svg viewBox="0 0 860 72" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-      <!-- central bloom -->
-      <circle cx="430" cy="36" r="10" fill="none" stroke="rgba(194,149,90,0.5)" stroke-width="1.3"/>
-      <circle cx="430" cy="36" r="4" fill="rgba(194,149,90,0.38)"/>
-      <!-- petals -->
-      <path d="M430 26 Q433 20 430 14 Q427 20 430 26Z" fill="rgba(194,149,90,0.32)"/>
-      <path d="M430 46 Q433 52 430 58 Q427 52 430 46Z" fill="rgba(194,149,90,0.32)"/>
-      <path d="M420 36 Q414 33 408 36 Q414 39 420 36Z" fill="rgba(194,149,90,0.32)"/>
-      <path d="M440 36 Q446 33 452 36 Q446 39 440 36Z" fill="rgba(194,149,90,0.32)"/>
-      <!-- left vine -->
-      <path d="M420 36 C385 36 342 22 298 36 C254 50 212 36 168 36 C124 36 78 28 0 36" stroke="rgba(194,149,90,0.28)" stroke-width="0.9" fill="none"/>
-      <!-- right vine -->
-      <path d="M440 36 C475 36 518 50 562 36 C606 22 648 36 692 36 C736 36 782 28 860 36" stroke="rgba(194,149,90,0.28)" stroke-width="0.9" fill="none"/>
-      <!-- left leaves -->
-      <path d="M298 36 C293 24 279 19 287 33Z" fill="rgba(194,149,90,0.22)"/>
-      <path d="M298 36 C293 48 279 53 287 39Z" fill="rgba(194,149,90,0.22)"/>
-      <path d="M210 36 C205 23 190 17 198 32Z" fill="rgba(194,149,90,0.17)"/>
-      <path d="M210 36 C205 49 190 55 198 40Z" fill="rgba(194,149,90,0.17)"/>
-      <path d="M120 36 C115 23 100 17 108 32Z" fill="rgba(194,149,90,0.12)"/>
-      <path d="M120 36 C115 49 100 55 108 40Z" fill="rgba(194,149,90,0.12)"/>
-      <!-- right leaves -->
-      <path d="M562 36 C567 24 581 19 573 33Z" fill="rgba(194,149,90,0.22)"/>
-      <path d="M562 36 C567 48 581 53 573 39Z" fill="rgba(194,149,90,0.22)"/>
-      <path d="M650 36 C655 23 670 17 662 32Z" fill="rgba(194,149,90,0.17)"/>
-      <path d="M650 36 C655 49 670 55 662 40Z" fill="rgba(194,149,90,0.17)"/>
-      <path d="M740 36 C745 23 760 17 752 32Z" fill="rgba(194,149,90,0.12)"/>
-      <path d="M740 36 C745 49 760 55 752 40Z" fill="rgba(194,149,90,0.12)"/>
-      <!-- small nodes -->
-      <circle cx="168" cy="36" r="2.5" fill="rgba(194,149,90,0.25)"/>
-      <circle cx="298" cy="36" r="2.5" fill="rgba(194,149,90,0.25)"/>
-      <circle cx="386" cy="36" r="2"   fill="rgba(194,149,90,0.2)"/>
-      <circle cx="474" cy="36" r="2"   fill="rgba(194,149,90,0.2)"/>
-      <circle cx="562" cy="36" r="2.5" fill="rgba(194,149,90,0.25)"/>
-      <circle cx="692" cy="36" r="2.5" fill="rgba(194,149,90,0.25)"/>
+    <svg viewBox="0 0 880 72" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="440" cy="36" r="10" fill="none" stroke="rgba(11,77,59,0.45)" stroke-width="1.3"/>
+      <circle cx="440" cy="36" r="3.8" fill="rgba(11,77,59,0.35)"/>
+      <path d="M440 26 Q443 20 440 14 Q437 20 440 26Z" fill="rgba(11,77,59,0.3)"/>
+      <path d="M440 46 Q443 52 440 58 Q437 52 440 46Z" fill="rgba(11,77,59,0.3)"/>
+      <path d="M430 36 Q424 33 418 36 Q424 39 430 36Z" fill="rgba(11,77,59,0.3)"/>
+      <path d="M450 36 Q456 33 462 36 Q456 39 450 36Z" fill="rgba(11,77,59,0.3)"/>
+      <path d="M430 36 C394 36 350 21 306 36 C262 51 220 36 176 36 C132 36 88 28 0 36" stroke="rgba(11,77,59,0.28)" stroke-width="0.9" fill="none"/>
+      <path d="M450 36 C486 36 530 51 574 36 C618 21 660 36 704 36 C748 36 792 28 880 36" stroke="rgba(11,77,59,0.28)" stroke-width="0.9" fill="none"/>
+      <path d="M306 36 C301 23 287 18 295 32Z" fill="rgba(11,77,59,0.2)"/>
+      <path d="M306 36 C301 49 287 54 295 40Z" fill="rgba(11,77,59,0.2)"/>
+      <path d="M220 36 C215 22 200 17 208 31Z" fill="rgba(11,77,59,0.16)"/>
+      <path d="M220 36 C215 50 200 55 208 41Z" fill="rgba(11,77,59,0.16)"/>
+      <path d="M130 36 C125 22 110 17 118 31Z" fill="rgba(11,77,59,0.11)"/>
+      <path d="M130 36 C125 50 110 55 118 41Z" fill="rgba(11,77,59,0.11)"/>
+      <path d="M574 36 C579 23 593 18 585 32Z" fill="rgba(11,77,59,0.2)"/>
+      <path d="M574 36 C579 49 593 54 585 40Z" fill="rgba(11,77,59,0.2)"/>
+      <path d="M660 36 C665 22 680 17 672 31Z" fill="rgba(11,77,59,0.16)"/>
+      <path d="M660 36 C665 50 680 55 672 41Z" fill="rgba(11,77,59,0.16)"/>
+      <path d="M750 36 C755 22 770 17 762 31Z" fill="rgba(11,77,59,0.11)"/>
+      <path d="M750 36 C755 50 770 55 762 41Z" fill="rgba(11,77,59,0.11)"/>
+      <circle cx="176" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
+      <circle cx="306" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
+      <circle cx="394" cy="36" r="2" fill="rgba(11,77,59,0.18)"/>
+      <circle cx="486" cy="36" r="2" fill="rgba(11,77,59,0.18)"/>
+      <circle cx="574" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
+      <circle cx="704" cy="36" r="2.5" fill="rgba(11,77,59,0.24)"/>
     </svg>
   </div>
 
-  <!-- GALLERY -->
-  <section class="section section--deep" id="gallery">
+  <!-- GALLERY — ivory-2, botanical texture -->
+  <section class="section section--ivory2 bot-texture" id="gallery">
     <div class="section-inner">
       <div class="gallery-intro">
         <div>
-          <p class="label">Gallery</p>
-          <h2 class="display" style="font-size:clamp(3rem,6.5vw,5.8rem)">Presence<span style="color:var(--gold)">.</span></h2>
+          <p class="sec-label">Gallery</p>
+          <h2 class="sec-heading">Presence<span class="dot">.</span></h2>
         </div>
         <p class="gallery-note">
-          Photographed against lush botanical settings — commanding subjects, verdant backdrops,
-          and unapologetic presence in the tradition of Kehinde Wiley.
+          Photographed against lush botanical settings — commanding, verdant,
+          and unapologetic in the tradition of Kehinde Wiley.
         </p>
       </div>
       <div class="gallery-layout">
-        <!-- Featured: 572 — the Kehinde Wiley shot (floral wallpaper) -->
-        <div class="photo-frame gallery-feature">
+        <div class="photo-frame gallery-feature bot-corner">
           <img src="images/paige-572.jpg" alt="Paige Monet Brown — botanical portrait" loading="lazy" />
         </div>
         <div class="gallery-secondary">
@@ -808,18 +844,18 @@
     </div>
   </section>
 
-  <!-- SIMPLE RULE DIVIDER -->
+  <!-- RULE DIVIDER -->
   <div class="rule-divider">
     <div class="line"></div>
-    <span class="diamond">✦</span>
+    <span class="orn">✦</span>
     <div class="line"></div>
   </div>
 
-  <!-- EXPERTISE -->
-  <section class="section section--green" id="expertise">
+  <!-- EXPERTISE — ivory, botanical leaf watermarks on cards -->
+  <section class="section section--ivory" id="expertise">
     <div class="section-inner">
-      <p class="label">What I Do</p>
-      <h2 class="display" style="font-size:clamp(3rem,6.5vw,5.8rem)">Expertise<span style="color:var(--gold)">.</span></h2>
+      <p class="sec-label">What I Do</p>
+      <h2 class="sec-heading">Expertise<span class="dot">.</span></h2>
       <div class="expertise-grid">
         <div class="expertise-card">
           <p class="expertise-num">I.</p>
@@ -855,18 +891,18 @@
     </div>
   </section>
 
-  <!-- SIMPLE RULE DIVIDER -->
+  <!-- RULE DIVIDER -->
   <div class="rule-divider">
     <div class="line"></div>
-    <span class="diamond">✦</span>
+    <span class="orn">✦</span>
     <div class="line"></div>
   </div>
 
-  <!-- CONNECT -->
-  <section class="section section--deep" id="connect">
+  <!-- CONNECT — ivory-2, botanical corner on photo -->
+  <section class="section section--ivory2 bot-texture" id="connect">
     <div class="section-inner">
-      <p class="label">Get in Touch</p>
-      <h2 class="display" style="font-size:clamp(3rem,6.5vw,5.8rem)">Let's<br/>Connect<span style="color:var(--gold)">.</span></h2>
+      <p class="sec-label">Get in Touch</p>
+      <h2 class="sec-heading">Let's<br />Connect<span class="dot">.</span></h2>
       <div class="connect-grid">
         <div class="connect-body">
           <p>
@@ -889,7 +925,7 @@
           </div>
         </div>
         <div class="connect-photo-col">
-          <div class="photo-frame connect-frame">
+          <div class="photo-frame connect-frame bot-corner">
             <img src="images/paige-671.jpg" alt="Paige Monet Brown" loading="lazy" />
           </div>
           <p class="connect-caption">Paige Monet Brown</p>
@@ -900,6 +936,22 @@
 
   <!-- FOOTER -->
   <footer>
+    <div class="footer-bot">
+      <svg viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="16" r="7" fill="none" stroke="rgba(194,149,90,1)" stroke-width="1"/>
+        <circle cx="60" cy="16" r="2.5" fill="rgba(194,149,90,0.8)"/>
+        <path d="M60 9 Q62 5 60 1 Q58 5 60 9Z" fill="rgba(194,149,90,0.7)"/>
+        <path d="M60 23 Q62 27 60 31 Q58 27 60 23Z" fill="rgba(194,149,90,0.7)"/>
+        <path d="M53 16 Q49 14 45 16 Q49 18 53 16Z" fill="rgba(194,149,90,0.7)"/>
+        <path d="M67 16 Q71 14 75 16 Q71 18 67 16Z" fill="rgba(194,149,90,0.7)"/>
+        <path d="M53 16 C40 16 22 10 0 16" stroke="rgba(194,149,90,0.45)" stroke-width="0.8" fill="none"/>
+        <path d="M67 16 C80 16 98 22 120 16" stroke="rgba(194,149,90,0.45)" stroke-width="0.8" fill="none"/>
+        <path d="M30 16 C28 10 22 8 26 14Z" fill="rgba(194,149,90,0.4)"/>
+        <path d="M30 16 C28 22 22 24 26 18Z" fill="rgba(194,149,90,0.4)"/>
+        <path d="M90 16 C92 10 98 8 94 14Z" fill="rgba(194,149,90,0.4)"/>
+        <path d="M90 16 C92 22 98 24 94 18Z" fill="rgba(194,149,90,0.4)"/>
+      </svg>
+    </div>
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="footer-name">Paige Monet Brown</span>
