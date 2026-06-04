@@ -327,26 +327,44 @@
     ═══════════════════════════════ */
     .editorial-photo {
       width: 100%;
-      height: 80vh;
-      min-height: 500px;
-      overflow: hidden;
+      background: var(--green-deep);
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
       position: relative;
+      overflow: hidden;
     }
     .editorial-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 18%;
       display: block;
+      /* Mobile: full-bleed */
+      width: 100%;
+      height: 80vh;
+      min-height: 500px;
+      object-fit: cover;
+      object-position: top center;
+      position: relative;
+      z-index: 1;
     }
-    /* subtle botanical corner on photo */
+    /* Desktop: portrait constrained — no awkward crop */
+    @media (min-width: 960px) {
+      .editorial-photo img {
+        width: auto;
+        max-width: 52%;
+        height: 90vh;
+        min-height: 600px;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+    /* dark gradient at bottom */
     .editorial-photo::after {
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to top, rgba(8,46,36,0.35), transparent);
+      height: 100px;
+      background: linear-gradient(to top, rgba(8,46,36,0.45), transparent);
       pointer-events: none;
+      z-index: 2;
     }
 
     /* photo caption */
