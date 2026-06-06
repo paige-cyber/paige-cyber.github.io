@@ -578,6 +578,85 @@
       .pull-quote-text { font-size: 1.5rem; }
       .editorial-photo { height: 45vh; }
     }
+
+    /* ─── BIO EXPAND TOGGLE ─── */
+    .bio-extended { margin-top: 0; }
+    .bio-toggle {
+      margin-top: 1.8rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: none; border: none;
+      padding: 0; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(166,122,62,0.35);
+      transition: color 0.2s;
+    }
+    .bio-toggle:hover { color: var(--green); }
+
+    /* ─── EXPERTISE OUTCOME LINE ─── */
+    .expertise-outcome {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 400;
+      color: var(--green);
+      line-height: 1.65;
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--ivory-3);
+    }
+    .expertise-outcome strong {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── SELECTED RECORD SECTION ─── */
+    .engagements-section {
+      background: var(--green-deep);
+      padding: 5rem 6vw;
+    }
+    .engagements-inner { max-width: 1040px; margin: 0 auto; }
+    .engagements-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.64rem; font-weight: 500;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      color: rgba(194,149,90,0.6);
+      display: flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 3rem;
+    }
+    .engagements-label::before, .engagements-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: rgba(194,149,90,0.18);
+    }
+    .engagements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+    }
+    .engagement-item {
+      border-left: 2px solid rgba(194,149,90,0.45);
+      padding-left: 1.4rem;
+    }
+    .engagement-cat {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.7rem;
+    }
+    .engagement-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 300;
+      color: rgba(242,237,227,0.75); line-height: 1.7;
+    }
+    @media (max-width: 900px) {
+      .engagements-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .engagements-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+      .engagements-section { padding: 4rem 6vw; }
+    }
   </style>
 </head>
 <body>
@@ -637,43 +716,39 @@
       <div class="reading-col">
         <p>
           Paige Monet Brown is the Principal and Founder of <strong>Jefferson &amp; Associates LLC</strong>,
-          a Dallas-based regulatory strategy and government affairs firm serving clients across cannabis, hemp,
-          alcohol, nightlife, and emerging adult-use industries. A citizen of the <strong>Mvskoke Creek Nation
-          (Creek Tribe of Oklahoma)</strong>, a proud queer, Black, and Indigenous woman, and a decade-long veteran
-          of some of the most politically complex regulatory environments in the country, Paige brings a rare
-          combination of political intelligence, coalition discipline, and community trust to every engagement.
+          a Dallas-based regulatory strategy and government affairs firm. A citizen of the <strong>Mvskoke Creek
+          Nation (Creek Tribe of Oklahoma)</strong>, a proud queer, Black, and Indigenous woman, and a
+          decade-long veteran of some of the most politically complex regulatory environments in the country,
+          she brings rare political intelligence, coalition discipline, and community trust to every engagement.
         </p>
         <p>
-          She has served as a driving force behind the development and governance of trade associations and advocacy
-          organizations including the <strong>Oregon Healthy Alternatives Association (ORHAA)</strong>,
-          <strong>America First Agriculture Action Inc.</strong>, and the <strong>American Healthy Alternatives
-          Association</strong> — building bylaws, board structures, governance frameworks, and public-facing
-          advocacy strategies from the ground up. At the federal level, Paige has directed legislative strategy
-          tied to <strong>Farm Bill reform</strong>, engaged the House Agriculture Committee, coordinated
-          large-scale public comment campaigns on ODA and OLCC rulemakings, and built multi-state industry
-          coalitions spanning Oregon, Texas, Ohio, Florida, Arizona, Washington, Maryland, and New York.
+          She has directed <strong>Farm Bill legislative strategy</strong>, engaged the House Agriculture
+          Committee on federal hemp reform, and coordinated public comment campaigns that set engagement-volume
+          records at ODA and OLCC — contributing to the defeat of adverse legislation in Oregon in the process.
+          She built and governs three national advocacy organizations including <strong>ORHAA</strong>,
+          Oregon's leading cannabis coalition, and has structured <strong>$14.5M in advocacy funding
+          strategy</strong> across eight states. A UT Austin graduate with dual degrees in African &amp; African
+          Diaspora Studies and Liberal Arts, she is an alumna of the <strong>Los Angeles African American
+          Women in Public Policy</strong> program (2021) and a regular presence at MJBizCon, CHAMPS, and
+          federal fly-ins in Washington, D.C.
         </p>
-        <p>
-          Before founding Jefferson &amp; Associates, Paige led <strong>PMB Consulting</strong> in Los Angeles,
-          where she built a reputation as a go-to strategist for high-stakes cannabis licensing, land entitlement,
-          and community engagement. Her work with developers, municipalities, and social equity entrepreneurs helped
-          shape California's post-legalization industry — translating city and county regulations into actionable
-          pathways for operators in historically excluded communities, with agency experience spanning LA City
-          Planning, LADBS, LA County Health, and the City of Los Angeles Department of Cannabis Regulation.
-        </p>
-        <p>
-          A graduate of the University of Texas at Austin, Paige holds dual Bachelor's degrees in
-          <strong>African &amp; African Diaspora Studies</strong> and <strong>Liberal Arts</strong> — a foundation
-          that anchors her understanding of systemic inequity, community dynamics, and the political history
-          embedded in every regulatory decision. She is an alumna of the <strong>Los Angeles African American
-          Women in Public Policy</strong> program (2021) and has been featured at industry convenings including
-          MJBizCon, CHAMPS Trade Shows, and DC fly-ins.
-        </p>
-        <p>
-          Beyond her practice, Paige is a performer and theatremaker with a lifelong love of the stage, a
-          dedicated horror film enthusiast, and someone who relishes critical discourse on virtually any topic.
-          Happily married for over a decade, and devoted dog mom to a Yorkie named <strong>Jefferson</strong>.
-        </p>
+        <div class="bio-extended" id="bioExtended" style="display:none;">
+          <p>
+            Before founding Jefferson &amp; Associates, Paige led <strong>PMB Consulting</strong> in Los Angeles,
+            where she built a reputation as a go-to strategist for high-stakes cannabis licensing, land
+            entitlement, and community engagement. Her work with developers, municipalities, and social equity
+            entrepreneurs helped shape California's post-legalization industry — translating city and county
+            regulations into actionable pathways for operators in historically excluded communities, with agency
+            experience spanning LA City Planning, LADBS, LA County Health, and the City of Los Angeles
+            Department of Cannabis Regulation.
+          </p>
+          <p>
+            Beyond her practice, Paige is a performer and theatremaker with a lifelong love of the stage, a
+            dedicated horror film enthusiast, and someone who relishes critical discourse on virtually any topic.
+            Happily married for over a decade, and devoted dog mom to a Yorkie named <strong>Jefferson</strong>.
+          </p>
+        </div>
+        <button class="bio-toggle" id="bioToggle" onclick="toggleBio()">+ Read full bio</button>
       </div>
     </div>
   </section>
@@ -714,8 +789,8 @@
         Old Money,<br />New Markets.
       </p>
       <div class="pull-quote-rule"></div>
-      <p class="pull-quote-attr" style="font-style:italic;font-size:0.85rem;margin-bottom:0.5rem;">Making old money accessible to new markets — growth potential and proper regulation.</p>
-      <p class="pull-quote-attr">Jefferson &amp; Associates LLC &nbsp;·&nbsp; Dallas, TX</p>
+      <p class="pull-quote-attr" style="font-style:italic;font-size:0.85rem;margin-bottom:0.5rem;">The conviction behind a decade of regulatory work: that communities historically excluded from generational wealth deserve access to the industries shaping it.</p>
+      <p class="pull-quote-attr">— Paige Monet Brown &nbsp;·&nbsp; Founder, Jefferson &amp; Associates LLC</p>
     </div>
   </section>
 
@@ -761,42 +836,66 @@
           <p class="expertise-num">I.</p>
           <h3>Federal Hemp &amp; Farm Bill Policy</h3>
           <p>Directing legislative strategy tied to Farm Bill reform, tracking House Agriculture Committee activity, and designing national campaigns to revise the federal definition of hemp across regulatory and congressional channels.</p>
+          <p class="expertise-outcome"><strong>Result —</strong> Contributed to HB 4139 and SB 1548 failing to advance in Oregon; active legislative monitoring across eight states.</p>
         </div>
         <div class="expertise-card">
           <p class="expertise-num">II.</p>
           <h3>Government Affairs &amp; Lobbying</h3>
           <p>Representing clients at federal and state levels — direct engagement with Congress, executive branch, and agency staff across Oregon, Texas, Ohio, Florida, Arizona, Washington, Maryland, and New York.</p>
+          <p class="expertise-outcome"><strong>Result —</strong> $14.5M in advocacy funding strategy structured; direct engagement with the House Agriculture Committee on Farm Bill reform.</p>
         </div>
         <div class="expertise-card">
           <p class="expertise-num">III.</p>
           <h3>Coalition &amp; Association Management</h3>
           <p>Formation, governance, and ongoing management of trade associations and advocacy organizations — including ORHAA, America First Agriculture Action Inc., and the American Healthy Alternatives Association.</p>
+          <p class="expertise-outcome"><strong>Result —</strong> Built ORHAA into Oregon's largest hemp and cannabis trade association; governance structures built for three national 501(c)(4) organizations from inception.</p>
         </div>
         <div class="expertise-card">
           <p class="expertise-num">IV.</p>
           <h3>Strategic Communications &amp; Public Affairs</h3>
           <p>Messaging playbooks, rapid response frameworks, rulemaking comment coordination, and public affairs campaigns that position clients as credible, proactive voices in high-stakes policy environments.</p>
+          <p class="expertise-outcome"><strong>Result —</strong> Coordinated public comment campaign achieving the highest single-rulemaking engagement volume on record for OLCC.</p>
         </div>
         <div class="expertise-card">
           <p class="expertise-num">V.</p>
           <h3>Land Use, Licensing &amp; Permitting</h3>
           <p>Site selection, zoning analysis, entitlement support, and agency navigation across dispensaries, consumption lounges, affordable housing, and mixed-use developments — with deep experience across Los Angeles County agencies.</p>
+          <p class="expertise-outcome"><strong>Result —</strong> 40+ cannabis and mixed-use licensing and entitlement projects across LA County — navigating City Planning, LADBS, LA County Health, and the City DCR.</p>
         </div>
         <div class="expertise-card">
           <p class="expertise-num">VI.</p>
           <h3>Organizational Structuring &amp; Governance</h3>
           <p>501(c)(4) and PAC structuring, D&amp;O insurance procurement, bylaw development, board operations, compliance frameworks, and financial systems for advocacy organizations built to withstand regulatory scrutiny.</p>
+          <p class="expertise-outcome"><strong>Result —</strong> National 501(c)(4) and PAC structures formed and operationalized with D&amp;O insurance, compliance systems, and financial frameworks in place.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RULE DIVIDER -->
-  <div class="rule-divider">
-    <div class="line"></div>
-    <span class="orn">✦</span>
-    <div class="line"></div>
-  </div>
+  <!-- SELECTED RECORD -->
+  <section class="engagements-section">
+    <div class="engagements-inner">
+      <p class="engagements-label">Selected Record</p>
+      <div class="engagements-grid">
+        <div class="engagement-item">
+          <p class="engagement-cat">Federal Legislative</p>
+          <p class="engagement-desc">Directed opposition strategy contributing to HB 4139 and SB 1548 failing to advance in Oregon's legislative session.</p>
+        </div>
+        <div class="engagement-item">
+          <p class="engagement-cat">Agency Rulemaking</p>
+          <p class="engagement-desc">Coordinated multi-stakeholder public comment campaign achieving the highest single-rulemaking engagement volume on record for OLCC.</p>
+        </div>
+        <div class="engagement-item">
+          <p class="engagement-cat">Industry Speaking</p>
+          <p class="engagement-desc">Featured presenter at MJBizCon, CHAMPS Trade Shows, and annual Washington D.C. fly-ins engaging the House Agriculture Committee on Farm Bill reform.</p>
+        </div>
+        <div class="engagement-item">
+          <p class="engagement-cat">Advocacy Scale</p>
+          <p class="engagement-desc">$14.5M in advocacy funding strategy structured; three national 501(c)(4) organizations built from inception to full operational governance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CONNECT -->
   <section class="section section--ivory bot-texture" id="connect">
@@ -808,6 +907,10 @@
           Journalists, conference organizers, coalition partners, and policymakers — this is where you find Paige. For firm engagements, consulting inquiries, and client work, visit <strong><a href="https://ja.partners" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;">Jefferson &amp; Associates at ja.partners</a></strong>.
         </p>
         <div class="connect-links">
+          <a href="tel:+15123636354" class="connect-link" id="phone-link">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            (512) 363-6354
+          </a>
           <a href="mailto:paige@ja.partners" class="connect-link">
             <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8.236l8 5 8-5V18z"/></svg>
             paige@ja.partners
@@ -850,6 +953,20 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function toggleBio() {
+      var ext = document.getElementById('bioExtended');
+      var btn = document.getElementById('bioToggle');
+      if (ext.style.display === 'none') {
+        ext.style.display = 'block';
+        btn.textContent = '− Close full bio';
+      } else {
+        ext.style.display = 'none';
+        btn.textContent = '+ Read full bio';
+      }
+    }
+  </script>
 
 </body>
 </html>
